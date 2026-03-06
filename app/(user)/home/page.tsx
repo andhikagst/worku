@@ -1,0 +1,4 @@
+const Home = () => {
+  return <main className="bg-gray-200 flex flex-col w-full h-screen">Home</main>;
+};
+export default Home;
