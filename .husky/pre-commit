@@ -1,1 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 1. Jalankan lint-staged untuk merapikan file yang berubah (cepat)
 npx lint-staged
+
+# 2. Jalankan build Next.js secara utuh (memastikan tidak ada error aplikasi)
+npm run build
