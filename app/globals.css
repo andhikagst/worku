@@ -7,6 +7,7 @@
 
 @theme inline {
   --font-poppins: var(--font-poppins);
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
 }
 
 body {
