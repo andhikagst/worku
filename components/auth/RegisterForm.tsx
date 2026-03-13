@@ -1,107 +1,47 @@
 "use client";
 
-import Link from "next/link";
-import { RegisterButton } from "../button";
+import { User, Mail, Lock } from "lucide-react";
 
 const RegisterForm = () => {
   return (
-    <form action="" className="space-y-6">
-      <div>
-        <label
-          htmlFor="email"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="john.doe@email.com"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
-        />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">Email error</span>
+    <form
+      action=""
+      onSubmit={() => console.log("form submitted")}
+      className="space-y-6 font-plus-jakarta-sans"
+    >
+      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100">
+        <div className="p-5">
+          <User size={24}/>
         </div>
-      </div>
-      <div>
-        <label
-          htmlFor="name"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Name
-        </label>
-        <input
-          type="name"
-          name="name"
-          placeholder="John Doe"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
-        />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">Name error</span>
-        </div>
-      </div>
-      <div>
-        <label
-          htmlFor="username"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Username
-        </label>
         <input
           type="text"
           name="name"
-          placeholder="johndoe"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
+          placeholder="Name"
+          className=" w-full text-[1.125rem]"
         />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">Username error</span>
-        </div>
       </div>
-      <div>
-        <label
-          htmlFor="password"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Password
-        </label>
+      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100">
+         <div className="p-5">
+          <Mail size={24}/>
+        </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="w-full text-[1.125rem]"
+        />
+      </div>
+      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100">
+         <div className="p-5">
+          <Lock size={24}/>
+        </div>
         <input
           type="password"
           name="password"
-          placeholder="********"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
+          placeholder="Password"
+          className="w-full text-[1.125rem]"
         />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">Password error</span>
-        </div>
       </div>
-      {/* <div>
-        <label
-          htmlFor="ConfirmPassword"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          name="ConfirmPassword"
-          placeholder="********"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
-        />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">
-            Confirm password error
-          </span>
-        </div>
-      </div> */}
-      <RegisterButton />
-      <p className="text-sm font-light text-gray-500">
-        Already have an account?
-        <Link href="/login">
-          <span className="font-medium pl-1 text-blue-600 hover:text-blue-700">
-            Sign In
-          </span>
-        </Link>
-      </p>
     </form>
   );
 };
