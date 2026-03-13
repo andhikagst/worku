@@ -1,31 +1,11 @@
-import Link from 'next/link';
-import { RegisterButton } from '../button';
+"use client";
+
+import Link from "next/link";
+import { RegisterButton } from "../button";
 
 const RegisterForm = () => {
   return (
-    <form
-      action=""
-      className="space-y-6"
-    >
-      <div>
-        <label
-          htmlFor="name"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          Name
-        </label>
-        <input
-          type="name"
-          name="name"
-          placeholder="John Doe"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
-        />
-        <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">
-            Name error
-          </span>
-        </div>
-      </div>
+    <form action="" className="space-y-6">
       <div>
         <label
           htmlFor="email"
@@ -40,9 +20,41 @@ const RegisterForm = () => {
           className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
         />
         <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">
-            Email error
-          </span>
+          <span className="text-sm text-red-500 mt-2">Email error</span>
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="name"
+          className="block mb-2 text-sm font-medium text-gray-900"
+        >
+          Name
+        </label>
+        <input
+          type="name"
+          name="name"
+          placeholder="John Doe"
+          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
+        />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">Name error</span>
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="username"
+          className="block mb-2 text-sm font-medium text-gray-900"
+        >
+          Username
+        </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="johndoe"
+          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
+        />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">Username error</span>
         </div>
       </div>
       <div>
@@ -59,12 +71,10 @@ const RegisterForm = () => {
           className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-full p-2.5"
         />
         <div aria-live="polite" aria-atomic="true">
-          <span className="text-sm text-red-500 mt-2">
-            Password error
-          </span>
+          <span className="text-sm text-red-500 mt-2">Password error</span>
         </div>
       </div>
-      <div>
+      {/* <div>
         <label
           htmlFor="ConfirmPassword"
           className="block mb-2 text-sm font-medium text-gray-900"
@@ -82,7 +92,7 @@ const RegisterForm = () => {
             Confirm password error
           </span>
         </div>
-      </div>
+      </div> */}
       <RegisterButton />
       <p className="text-sm font-light text-gray-500">
         Already have an account?
@@ -96,4 +106,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm
+export default RegisterForm;
