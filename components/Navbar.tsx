@@ -1,12 +1,35 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
-import pencil_line_y from "@/public/navbar/pencil_line_y.svg";
 import logo from "@/public/navbar/logo.svg";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 20) {
+        setVisible(false);
+      } else {
+        setVisible(true); 
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header>
-      <nav className="bg-transparent  flex justify-between px-11 py-4 items-center font-poppins text-white fixed top-0 left-0 right-0 z-99">
+      <nav className={`font-plus-jakarta-sans flex justify-between px-11 bg-blue-normal py-2 items-center text-white fixed top-0 left-0 right-0 z-99 transition-all duration-200
+          ${visible ? "translate-y-0" : "-translate-y-full"}
+        `}>
         <ul className="flex items-center">
           <li className="text-3xl font-semibold">
             <Link href="/home">

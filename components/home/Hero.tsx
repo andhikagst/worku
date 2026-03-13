@@ -4,7 +4,7 @@ import wanita_hero from "@/public/home/hero/wanita_hero.png";
 const Hero = () => {
   return (
     <section className="h-screen w-full font-plus-jakarta-sans text-white flex flex-col relative z-0">
-      <div className="bg-linear-to-b from-blue-normal py-32 to-green-normal to-70% flex flex-col justify-center gap-5 px-20 h-full">
+      <div className="bg-linear-to-b from-blue-normal pt-26 to-green-normal to-70% flex flex-col justify-center gap-5 px-20 h-full">
         <h2 className="text-body1">Start your favorite course</h2>
         <div className="font-semibold text-h2 drop-shadow-md drop-shadow-[rgba(0,0,0,0.25)]">
           <div>ACCELERATE YOUR</div>
@@ -38,11 +38,15 @@ const Hero = () => {
           <h2 className="font-medium text-body3">Task Scenarios Simulated</h2>
         </div>
       </div>
-      <Image
-        src={wanita_hero}
-        alt="..."
-        className="absolute w-[60%] right-0 -bottom-10"
-      />
+      <div className="absolute right-0 -bottom-10 w-[75%] h-full">
+        <Image
+          src={wanita_hero}
+          fill
+          alt="..."
+          className="object-contain object-bottom"
+          priority
+        />
+      </div>
     </section>
   );
 };
