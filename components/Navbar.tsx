@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/navbar/logo.svg";
 import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -31,13 +32,13 @@ const Navbar = () => {
           ${visible ? "translate-y-0" : "-translate-y-full"}
         `}>
         <ul className="flex items-center">
-          <li className="text-3xl font-semibold">
+          <li>
             <Link href="/home">
               <Image src={logo} alt="..." width={107} height={85} />
             </Link>
           </li>
         </ul>
-        <ul className="flex gap-10 text-body3 items-center">
+        <ul className="flex gap-10 text-body-sm items-center">
           <li>
             <Link href="/home">Home</Link>
           </li>
@@ -51,7 +52,7 @@ const Navbar = () => {
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
-        <ul className="flex gap-3 text-base items-center">
+        <ul className="flex gap-3 text-body-sm items-center">
           <li>
             <Link
               className="bg-white rounded-4xl text-blue-normal-hover text-body3 px-5.5 py-2.5 shadow-md"
@@ -62,7 +63,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className="bg-blue-darker rounded-4xl text-white text-body3 px-5.5 py-2.5 shadow-md"
+              className="bg-blue-darker rounded-4xl text-white text-body-sm px-5.5 py-2.5 shadow-md"
               href="/register"
             >
               Register

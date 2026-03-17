@@ -25,7 +25,7 @@ const Mentor = () => {
             <h1>Meet our great</h1>
             <h1>mentor</h1>
           </div>
-          <p className="text-body2">
+          <p className="text-300 leading-[1.3]">
             Our mentors are the bridge to your
             <br />
             professional readiness, guiding you

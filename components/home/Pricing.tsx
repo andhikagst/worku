@@ -7,8 +7,8 @@ const Pricing = () => {
   return (
     <div className="flex flex-col items-center gap-10 py-16">
       <div className="text-blue-dark-hover text-center flex flex-col gap-5">
-        <h1 className="text-h2 font-bold">Affordable pricing plans</h1>
-        <p className="text-body2">
+        <h1 className="text-display-3 font-bold">Affordable pricing plans</h1>
+        <p className="text-300 leading-normal">
           Monthly subscription for unlimited access to all materials. The longer<br/>you subscribe, the more savings and benefits you get.
         </p>
       </div>

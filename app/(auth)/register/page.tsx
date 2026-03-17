@@ -6,7 +6,7 @@ import bg_login from "@/public/auth/bg_login.png";
 import outline_quote from "@/public/auth/outline_quote.svg";
 
 import React from "react";
-import PrimaryButton from "@/components/UI/button/PrimaryButton";
+import {PrimaryButtonDefault} from "@/components/UI/button/PrimaryButton";
 import RegisterForm from "@/components/auth/RegisterForm";
 
 const RegisterPage = () => {
@@ -36,9 +36,9 @@ const RegisterPage = () => {
           or use your email for registration
         </p>
         <RegisterForm></RegisterForm>
-        <PrimaryButton className="px-12 py-2.5 bg-blue-normal font-semibold text-white">
+        <PrimaryButtonDefault className="px-12 py-2.5 bg-blue-normal font-semibold text-white">
           Sign Up
-        </PrimaryButton>
+        </PrimaryButtonDefault>
       </div>
     </main>
   );

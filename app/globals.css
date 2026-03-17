@@ -12,11 +12,11 @@
   --color-blue-light: #ebf0f3;
   --color-blue-light-hover: #e1e9ed;
   --color-blue-light-active: #c0d1d9;
-  
+
   --color-blue-normal: #356c85;
   --color-blue-normal-hover: #306178;
   --color-blue-normal-active: #2a566a;
-  
+
   --color-blue-dark: #285164;
   --color-blue-dark-hover: #204150;
   --color-blue-dark-active: #18313c;
@@ -25,45 +25,85 @@
   --color-green-light: #f0f7f6;
   --color-green-light-hover: #e8f3f2;
   --color-green-light-active: #d0e5e3;
-  
+
   --color-green-normal: #66aca5;
   --color-green-normal-hover: #5c9b95;
   --color-green-normal-active: #528a84;
-  
+
   --color-green-dark: #4d817c;
   --color-green-dark-hover: #3d6763;
   --color-green-dark-active: #2e4d4a;
   --color-green-darker: #243c3a;
 
-  /* Title */
-  --text-title: 4.5rem; /* 72px */
-  --text-title--line-height: 6.75rem; /* 108px */
+  --text-display-1: 5.625rem; /* 90px */
+  --text-display-1--line-height: 5.625rem; /* 90px */
 
-  /* Headings */
+  --text-display-2: 4.5rem; /* 72px */
+  --text-display-2--line-height: 5rem; /* 80px */
+
+  --text-display-3: 2.75rem; /* 44px */
+  --text-display-3--line-height: 3.125rem; /* 50px */
+
+  --text-display-4: 1.75rem; /* 28px */
+  --text-display-4--line-height: 2.375rem; /* 38px */
+
   --text-h1: 3.5rem; /* 56px */
-  --text-h1--line-height: 5.25rem; /* 84px */
-  
-  --text-h2: 3rem; /* 48px */
-  --text-h2--line-height: 4.5rem; /* 72px */
-  
-  --text-h3: 2.5rem; /* 40px */
-  --text-h3--line-height: 3.75rem; /* 60px */
-  
-  --text-h4: 2rem; /* 32px */
-  --text-h4--line-height: 3rem; /* 48px */
+  --text-h1--line-height: 4.125rem; /* 66px */
 
-  /* Body */
-  --text-body1: 1.5rem; /* 24px */
-  --text-body1--line-height: 2.25rem; /* 36px */
-  
-  --text-body2: 1.25rem; /* 20px */
-  --text-body2--line-height: 1.875rem; /* 30px */
-  
-  --text-body3: 1rem; /* 16px */
-  --text-body3--line-height: 1.5rem; /* 24px */
-  
-  --text-body4: 0.75rem; /* 12px */
-  --text-body4--line-height: 1.125rem; /* 18px */
+  --text-h2: 2.25rem; /* 36px */
+  --text-h2--line-height: 2.875rem; /* 46px */
+
+  --text-h3: 1.5rem; /* 24px */
+  --text-h3--line-height: 2.125rem; /* 34px */
+
+  --text-h4: 1.375rem; /* 22px */
+  --text-h4--line-height: 1.75rem; /* 28px */
+
+  --text-h5: 1.125rem; /* 18px */
+  --text-h5--line-height: 1.5rem; /* 24px */
+
+  --text-h6: 1rem; /* 16px */
+  --text-h6--line-height: 1.375rem; /* 22px */
+
+  --text-body-lg: 1.375rem; /* 22px */
+  --text-body-lg--line-height: 2.25rem; /* 36px */
+
+  --text-body: 1.125rem; /* 18px */
+  --text-body--line-height: 1.875rem; /* 30px */
+
+  --text-body-sm: 1rem; /* 16px */
+  --text-body-sm--line-height: 1.75rem; /* 28px */
+
+  --text-body-xs: 0.75rem; /* 12px */
+  --text-body-xs--line-height: 1.5rem; /* 24px */
+
+  --text-400: 1.375rem; /* 22px */
+  --text-400--line-height: 1.375rem; /* 22px */
+
+  --text-300: 1.25rem; /* 20px */
+  --text-300--line-height: 1.25rem; /* 20px */
+
+  --text-200: 1.125rem; /* 18px */
+  --text-200--line-height: 1.125rem; /* 18px */
+
+  --text-100: 1rem; /* 16px */
+  --text-100--line-height: 1.125rem; /* 18px */
+
+  --text-up-400: 1.5rem; /* 24px */
+  --text-up-400--line-height: 1.625rem; /* 26px */
+
+  --text-up-300: 1.25rem; /* 20px */
+  --text-up-300--line-height: 1.375rem; /* 22px */
+
+  --text-up-200: 1.125rem; /* 18px */
+  --text-up-200--line-height: 1.25rem; /* 20px */
+
+  --text-up-100: 1rem; /* 16px */
+  --text-up-100--line-height: 1.125rem; /* 18px */
+
+  --text-rich: 1.125rem; /* 18px */
+  --text-rich--line-height: 1.875rem; /* 30px */
+
 }
 
 body {
@@ -76,4 +116,17 @@ h1 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }

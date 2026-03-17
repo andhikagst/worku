@@ -7,7 +7,7 @@ import bg_login from "@/public/auth/bg_login.png";
 import chat from "@/public/auth/chat.svg";
 
 import React from "react";
-import PrimaryButton from "@/components/UI/button/PrimaryButton";
+import {PrimaryButtonDefault} from "@/components/UI/button/PrimaryButton";
 
 const LoginPage = () => {
   return (
@@ -25,9 +25,9 @@ const LoginPage = () => {
           or use your email account
         </p>
         <LoginForm></LoginForm>
-        <PrimaryButton className="px-12 py-2.5 bg-blue-normal font-semibold text-white">
+        <PrimaryButtonDefault className="px-12 py-2.5 bg-blue-normal font-semibold text-white">
           Sign In
-        </PrimaryButton>
+        </PrimaryButtonDefault>
       </div>
       <div
         className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative"
