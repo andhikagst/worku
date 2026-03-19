@@ -1,23 +1,23 @@
-import CallToAction from "@/components/home/CallToAction";
-import Course from "@/components/home/Course";
-import Feature from "@/components/home/Feature";
-import Hero from "@/components/home/Hero";
-import Mentor from "@/components/home/Mentor";
-import Partner from "@/components/home/Partner";
-import Pricing from "@/components/home/Pricing";
-import Rating from "@/components/home/Rating";
+import CTAContainer from "@/features/home/cta/container/container";
+import CourseContainer from "@/features/home/course/container/container";
+import FeatureContainer from "@/features/home/feature/container/container";
+import HeroContainer from "@/features/home/hero/container/container";
+import MentorContainer from "@/features/home/mentor/container/container";
+import PartnerContainer from "@/features/home/partner/container/container";
+import PricingContainer from "@/features/home/pricing/container/container";
+import RatingContainer from "@/features/home/rating/container/container";
 
 const Home = () => {
   return (
     <>
-      <Hero />
-      <Partner />
-      <Course />
-      <Feature />
-      <Mentor />
-      <Rating />
-      <Pricing />
-      <CallToAction />
+      <HeroContainer />
+      <PartnerContainer />
+      <CourseContainer />
+      <FeatureContainer />
+      <MentorContainer />
+      <RatingContainer />
+      <PricingContainer />
+      <CTAContainer />
     </>
   );
 };

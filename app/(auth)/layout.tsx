@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/shared/components/layouts/Navbar";
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import QueryProvider from "@/components/providers/QueryProvider";
+import QueryProvider from "@/shared/components/providers/QueryProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -20,8 +20,6 @@ export const metadata: Metadata = {
   description: "...",
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${plusJakartaSans.variable} antialiased`}>
-        <QueryProvider>
-          {children}
-        </QueryProvider>
+      <body
+        className={`${poppins.variable} ${plusJakartaSans.variable} antialiased`}
+      >
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

@@ -6,8 +6,8 @@ import bg_login from "@/public/auth/bg_login.png";
 import outline_quote from "@/public/auth/outline_quote.svg";
 
 import React from "react";
-import {PrimaryButtonDefault} from "@/components/UI/button/PrimaryButton";
-import RegisterForm from "@/components/auth/RegisterForm";
+import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
+import RegisterForm from "@/features/auth/components/RegisterForm";
 
 const RegisterPage = () => {
   return (
@@ -21,8 +21,12 @@ const RegisterPage = () => {
           <h1 className="text-[5rem] font-bold">Happen</h1>
           <h1 className="text-[5rem] font-bold">Together!</h1>
         </div>
-        <Image className="absolute top-[6%] left-[35%]" src={outline_quote} alt="..." />
-      </div>      
+        <Image
+          className="absolute top-[6%] left-[35%]"
+          src={outline_quote}
+          alt="..."
+        />
+      </div>
       <div className="flex flex-col flex-1 justify-center items-center gap-5">
         <h1 className="text-[2.75rem] text-blue-dark font-bold">
           Create account

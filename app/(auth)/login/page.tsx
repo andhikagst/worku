@@ -1,4 +1,4 @@
-import LoginForm from "@/components/auth/LoginForm";
+import LoginForm from "@/features/auth/components/LoginForm";
 import Image from "next/image";
 import google from "@/public/auth/google.png";
 import facebook from "@/public/auth/facebook.png";
@@ -7,7 +7,7 @@ import bg_login from "@/public/auth/bg_login.png";
 import chat from "@/public/auth/chat.svg";
 
 import React from "react";
-import {PrimaryButtonDefault} from "@/components/UI/button/PrimaryButton";
+import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
 
 const LoginPage = () => {
   return (
@@ -38,7 +38,11 @@ const LoginPage = () => {
           <h1 className="text-[5rem] font-bold">welcome</h1>
           <h1 className="text-[5rem] font-bold">back!</h1>
         </div>
-        <Image className="absolute top-[25%] right-[28%]" src={chat} alt="..." />
+        <Image
+          className="absolute top-[25%] right-[28%]"
+          src={chat}
+          alt="..."
+        />
       </div>
     </main>
   );
