@@ -24,10 +24,7 @@ const LoginPage = () => {
         <p className="text-[#797A7C] text-[1.125rem]">
           or use your email account
         </p>
-        <LoginForm></LoginForm>
-        <PrimaryButtonDefault className="px-12 py-2.5 bg-blue-normal font-semibold text-white">
-          Sign In
-        </PrimaryButtonDefault>
+        <LoginForm />
       </div>
       <div
         className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative"

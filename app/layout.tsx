@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/shared/components/providers/QueryProvider";
+import NextAuthProvider from "@/shared/components/providers/SessionProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${plusJakartaSans.variable} antialiased`}
       >
-        <QueryProvider>{children}</QueryProvider>
+        <NextAuthProvider>
+          <QueryProvider>{children}</QueryProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

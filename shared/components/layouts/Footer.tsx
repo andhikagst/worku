@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-blue-normal h-40.5">
       <div className="h-full flex justify-between items-center pl-16.5 pr-43.75 font-plus-jakarta-sans">
-        <Image src={logo} alt="..." fill className="object-cover" />
+        <Image src={logo} alt="..." width={107} height={85} />
         <p className="text-200 text-white">
           Copyright © 2023 | All Rights Reserved{" "}
         </p>
