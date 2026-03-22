@@ -11,6 +11,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
         const parsed = loginSchema.safeParse(credentials);
         if (!parsed.success) {
           return null;

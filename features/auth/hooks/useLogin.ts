@@ -13,7 +13,6 @@ export const useLogin = () => {
       if (result?.error) {
         throw new Error("Wrong username or password");
       }
-
       return result;
     },
   });
