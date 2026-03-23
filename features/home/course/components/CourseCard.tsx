@@ -3,9 +3,16 @@ import React from "react";
 import { Course } from "../data/courseList";
 import { Users, FileText } from "lucide-react";
 
-const CourseCard = ({ data }: { data: Course }) => {
+interface CardProps {
+  data: Course;
+  className?: string;
+}
+
+const CourseCard = ({ data, className }: CardProps) => {
   return (
-    <div className="flex flex-col px-4 pt-4 pb-6 border rounded-2xl gap-4">
+    <div
+      className={`flex flex-col px-4 pt-4 pb-6 border rounded-2xl gap-4 ${className}`}
+    >
       <Image src={data.image} alt="..." />
       <div className="flex flex-col gap-2">
         <h1 className="font-bold text-300">{data.title}</h1>
