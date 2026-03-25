@@ -46,6 +46,16 @@ export const PrimaryButtonSmall = ({ children, type, disabled, onClick, classNam
     </button>
   );
 };
+export const PrimaryButtonSmaller = ({ children, type, disabled, onClick, className }: ButtonProps) => (
+  <button
+    type={type}
+    disabled={disabled}
+    onClick={onClick}
+    className={`hover:bg-blue-dark-hover transition-all cursor-pointer w-fit font-plus-jakarta-sans text-100 font-bold px-4.5 py-3.5 bg-blue-dark text-white rounded-full shadow-[rgba(0,0,0,0.25)] ${className}`}
+  >
+    {children}
+  </button>
+);
 export const SecondaryButtonLarge = ({ children, type, disabled, onClick, className }: ButtonProps) => {
   return (
     <button

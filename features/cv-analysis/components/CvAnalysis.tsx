@@ -5,7 +5,8 @@ import ExperienceForm from "./form/ExperienceForm";
 import SkillForm from "./form/SkillForm";
 import GoalForm from "./form/GoalForm";
 import Image from "next/image";
-import ai from "@/public/home/features/ai.png"
+import ai from "@/public/home/features/ai.png";
+import { TextInput } from "@/shared/components/UI/input/TextInput";
 
 const CvAnalysis = () => {
   return (
@@ -32,24 +33,31 @@ const CvAnalysis = () => {
               <SkillForm />
               <GoalForm />
             </div>
-            <div className="space-y-1">
-              <label htmlFor="input1" className="block">
-                Anything specific you want the AI to focus on?
-              </label>
-              <input
-                id="input1"
-                type="text"
-                className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1.5 placeholder:text-[#616162]"
+            <form action="">
+              <TextInput
+                label="Anything specific you want the AI to focus on?"
                 placeholder="e.g. ‘I have a 2 year employment gap, help me frame it "
               />
-            </div>
+            </form>
           </div>
         </div>
         <div className="flex flex-col pt-16 pb-25 justify-center items-center bg-blue-normal text-[#D9D9D9] gap-4.5 rounded-3xl">
-          <Image src={ai} alt="..." width={80} height={80} color="#D9D9D9"></Image>
-          <h1 className="text-h2 font-bold text-center">Your CV Analysis Will Apper Here!</h1>
-          <p className="text-body leading-relaxed text-center">Upload your PDF resume and target role, then hit Analyze to get an instant AI-powered<br/>breakdown of your CV with improvement tips.</p>
-
+          <Image
+            src={ai}
+            alt="..."
+            width={80}
+            height={80}
+            color="#D9D9D9"
+          ></Image>
+          <h1 className="text-h2 font-bold text-center">
+            Your CV Analysis Will Apper Here!
+          </h1>
+          <p className="text-body leading-relaxed text-center">
+            Upload your PDF resume and target role, then hit Analyze to get an
+            instant AI-powered
+            <br />
+            breakdown of your CV with improvement tips.
+          </p>
         </div>
       </div>
     </section>

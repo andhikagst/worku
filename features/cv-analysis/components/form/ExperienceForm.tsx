@@ -1,4 +1,7 @@
 import React from "react";
+import { ChevronDown } from "lucide-react";
+import { SelectInput } from "@/shared/components/UI/input/SelectInput";
+import { inputOptionList } from "../../data/inputOptionList";
 
 const ExperienceForm = () => {
   return (
@@ -10,39 +13,9 @@ const ExperienceForm = () => {
         <h1>Experience</h1>
       </label>
       <form action="" className="text-body-xs space-y-2">
-        <div className="space-y-1">
-          <label htmlFor="input1" className="block">
-            Work Experience
-          </label>
-          <input
-            id="input1"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input2" className="block">
-            Highest Education
-          </label>
-          <input
-            id="input2"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input3" className="block">
-            Employment Status
-          </label>
-          <input
-            id="input3"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
+        <SelectInput label="Work Experience" options={inputOptionList.workExp} />
+        <SelectInput label="Highest Education" options={inputOptionList.highestEdu} />
+        <SelectInput label="Employment Status" options={inputOptionList.empStatus} />
       </form>
     </div>
   );

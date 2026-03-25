@@ -1,4 +1,7 @@
+import { TextInput } from "@/shared/components/UI/input/TextInput";
 import React from "react";
+import { inputOptionList } from "../../data/inputOptionList";
+import { SelectInput } from "@/shared/components/UI/input/SelectInput";
 
 const CompanyForm = () => {
   return (
@@ -10,39 +13,9 @@ const CompanyForm = () => {
         <h1>Target & Company</h1>
       </label>
       <form action="" className="text-body-xs space-y-2">
-        <div className="space-y-1">
-          <label htmlFor="input1" className="block">
-            Job Title
-          </label>
-          <input
-            id="input1"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="e.g. Data Scientist"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input2" className="block">
-            Target Company
-          </label>
-          <input
-            id="input2"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="e.g. Gojek, Shopee"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input3" className="block">
-            Industry/Sector
-          </label>
-          <input
-            id="input3"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
+        <TextInput label="Job Title" placeholder="e.g. Data Scientist"/>
+        <TextInput label="Target Company" placeholder="e.g. Gojek, Shopee"/>
+        <SelectInput label="Industry/Sector" options={inputOptionList.industry} />
       </form>
     </div>
   );

@@ -1,4 +1,6 @@
+import { SelectInput } from "@/shared/components/UI/input/SelectInput";
 import React from "react";
+import { inputOptionList } from "../../data/inputOptionList";
 
 const GoalForm = () => {
   return (
@@ -10,39 +12,18 @@ const GoalForm = () => {
         <h1>Goal & Focus</h1>
       </label>
       <form action="" className="text-body-xs space-y-2">
-        <div className="space-y-1">
-          <label htmlFor="input1" className="block">
-            Primary Analysis Goals
-          </label>
-          <input
-            id="input1"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input2" className="block">
-            How Many Applications Sent?
-          </label>
-          <input
-            id="input2"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
-        <div className="space-y-1">
-          <label htmlFor="input3" className="block">
-            Biggest Concern About CV
-          </label>
-          <input
-            id="input3"
-            type="text"
-            className="w-full text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162]"
-            placeholder="-- Select --"
-          />
-        </div>
+        <SelectInput
+          label="Primary Analysis Goals"
+          options={inputOptionList.primaryGoal}
+        />
+        <SelectInput
+          label="How Many Applications Sent?"
+          options={inputOptionList.appSent}
+        />
+        <SelectInput
+          label="Biggest Concern About CV"
+          options={inputOptionList.concern}
+        />
       </form>
     </div>
   );

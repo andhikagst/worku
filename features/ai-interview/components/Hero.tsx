@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="flex w-full pt-25.25 bg-[linear-gradient(270deg,#356C85_0%,#61A5A2_83.65%,#66ACA5_100%)] font-plus-jakarta-sans text-white justify-center">
+    <section className="flex w-full pt-25.25 bg-hero-gradient font-plus-jakarta-sans text-white justify-center">
       <div className="flex justify-center items-center py-18">
         <div className="flex flex-col gap-10.5">
           <div>

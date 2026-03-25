@@ -17,7 +17,11 @@ const PracticionerCard = () => {
         </div>
       </div>
       <div className="relative z-1 w-full">
-        <Image src={business_man} alt="..." className="w-full h-auto object-cover object-bottom" />
+        <Image
+          src={business_man}
+          alt="..."
+          className="w-full h-auto object-cover object-bottom"
+        />
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const RegisterForm = () => {
   const onSubmit = (data: RegisterPayload) => {
     mutate(data, {
       onSuccess: () => {
-        router.push("/login")
+        router.push("/login");
       },
       onError: (error) => {
         console.error(error);
@@ -48,7 +48,9 @@ const RegisterForm = () => {
           {...register("name")}
         />
       </div>
-        {errors.name && <p className="text-red-500 text-sm pl-2">{errors.name.message}</p>}
+      {errors.name && (
+        <p className="text-red-500 text-sm pl-2">{errors.name.message}</p>
+      )}
       <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
         <div className="p-5">
           <Mail size={24} />
@@ -60,7 +62,9 @@ const RegisterForm = () => {
           {...register("email")}
         />
       </div>
-        {errors.email && <p className="text-red-500 text-sm pl-2">{errors.email.message}</p>}
+      {errors.email && (
+        <p className="text-red-500 text-sm pl-2">{errors.email.message}</p>
+      )}
       <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
         <div className="p-5">
           <User size={24} />
@@ -72,7 +76,9 @@ const RegisterForm = () => {
           {...register("username")}
         />
       </div>
-        {errors.username && <p className="text-red-500 text-sm pl-2">{errors.username.message}</p>}
+      {errors.username && (
+        <p className="text-red-500 text-sm pl-2">{errors.username.message}</p>
+      )}
       <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
         <div className="p-5">
           <Lock size={24} />
@@ -84,7 +90,9 @@ const RegisterForm = () => {
           {...register("password")}
         />
       </div>
-        {errors.password && <p className="text-red-500 text-sm pl-2">{errors.password.message}</p>}
+      {errors.password && (
+        <p className="text-red-500 text-sm pl-2">{errors.password.message}</p>
+      )}
       <div className="flex justify-center">
         <PrimaryButtonSmall
           type="submit"
