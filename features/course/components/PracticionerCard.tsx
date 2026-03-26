@@ -1,4 +1,4 @@
-import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import Image from "next/image";
 import business_man from "@/public/course/young-businessman-removebg-preview 1.png";
 import React from "react";
@@ -11,9 +11,13 @@ const PracticionerCard = () => {
         <div className="py-21 px-18 flex flex-col gap-5">
           <h1 className="font-bold text-h1">Alvin Triartanto</h1>
           <h2 className="font-medium text-h3">Data Scientist | Gojek</h2>
-          <PrimaryButtonDefault className="text-h3 font-normal bg-blue-dark-hover">
+          <Button
+            variant="primary"
+            size="default"
+            className="text-h3 font-normal bg-blue-dark-hover"
+          >
             See Syllabus
-          </PrimaryButtonDefault>
+          </Button>
         </div>
       </div>
       <div className="relative z-1 w-full">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import CourseCard from "./CourseCard";
 import { courseList } from "../data/courseList";
 import Link from "next/link";
-import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 
 const Course = () => {
   return (
@@ -17,7 +17,9 @@ const Course = () => {
         })}
       </div>
       <Link href="/course">
-        <PrimaryButtonDefault>Explore All Course</PrimaryButtonDefault>
+        <Button variant="primary" size="default">
+          Explore All Course
+        </Button>
       </Link>
     </section>
   );

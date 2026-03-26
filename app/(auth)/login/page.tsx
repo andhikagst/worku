@@ -7,7 +7,7 @@ import bg_login from "@/public/auth/bg_login.png";
 import chat from "@/public/auth/chat.svg";
 
 import React from "react";
-import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 
 const LoginPage = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import cta from "@/public/home/cta/cta.png";
 import React from "react";
-import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
@@ -20,9 +20,13 @@ const CallToAction = () => {
             <br />
             academic potential into professional success.
           </p>
-          <PrimaryButtonDefault className="flex items-center gap-2">
+          <Button
+            variant="primary"
+            size="default"
+            className="flex items-center gap-2"
+          >
             Get Started <ArrowRight />
-          </PrimaryButtonDefault>
+          </Button>
         </div>
       </div>
     </section>

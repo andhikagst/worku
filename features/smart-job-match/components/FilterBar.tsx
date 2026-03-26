@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { filterList } from "../data/filterList";
-import { PrimaryButtonSmaller } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import { ChevronDown } from "lucide-react";
 
 const FilterBar = () => {
@@ -13,7 +13,7 @@ const FilterBar = () => {
         <span className="text-200 font-bold text-white">FILTER:</span>
         {filterList.map((data) => {
           return (
-            <PrimaryButtonSmaller
+            <Button variant="primary" size="smaller"
               key={data.id}
               onClick={() => setActive(data.id)}
               className={`transition-colors text-body py-1.5! px-3! ${
@@ -23,7 +23,7 @@ const FilterBar = () => {
               }`}
             >
               {data.label}
-            </PrimaryButtonSmaller>
+            </Button>
           );
         })}
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Pricing } from "../data/pricingList";
-import { PrimaryButtonSmall } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import { CircleCheck } from "lucide-react";
 
 const PricingCard = ({ data }: { data: Pricing }) => {
@@ -22,9 +22,13 @@ const PricingCard = ({ data }: { data: Pricing }) => {
             );
           })}
         </div>
-        <PrimaryButtonSmall className="self-center px-8 py-4 text-200">
+        <Button
+          variant="primary"
+          size="small"
+          className="self-center px-8 py-4 text-200"
+        >
           Get Started
-        </PrimaryButtonSmall>
+        </Button>
       </div>
     </div>
   );

@@ -1,11 +1,4 @@
-import React from "react";
 import { filterList } from "../data/filterList";
-import {
-  PrimaryButtonDefault,
-  PrimaryButtonLarge,
-  PrimaryButtonSmall,
-  SecondaryButtonSmall,
-} from "@/shared/components/UI/button/PrimaryButton";
 import { courseList } from "../data/courseList";
 import CourseCard from "@/features/home/course/components/CourseCard";
 

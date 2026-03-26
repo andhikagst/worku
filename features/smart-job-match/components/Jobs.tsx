@@ -1,6 +1,6 @@
 import React from "react";
 import { filterList } from "../data/filterList";
-import { PrimaryButtonSmall } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import FilterBar from "./FilterBar";
 import JobCard from "./JobCard";
 import { jobList } from "../data/jobList";

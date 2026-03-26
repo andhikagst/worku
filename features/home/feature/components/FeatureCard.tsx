@@ -1,10 +1,7 @@
-import {
-  PrimaryButtonDefault,
-  SecondaryButtonDefault,
-} from "@/shared/components/UI/button/PrimaryButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Feature } from "../data/featureList";
+import { Button } from "@/shared/components/UI/button/Button";
 
 const FeatureCard = ({ data }: { data: Feature }) => {
   const isHighlight = data.variant === "highlight";
@@ -22,13 +19,21 @@ const FeatureCard = ({ data }: { data: Feature }) => {
       <p className="text-body-sm text-center">{data.desc}</p>
       <Link href="">
         {isHighlight ? (
-          <PrimaryButtonDefault className="px-16 font-normal">
+          <Button
+            variant="primary"
+            size="default"
+            className="px-16 font-normal"
+          >
             Learn More
-          </PrimaryButtonDefault>
+          </Button>
         ) : (
-          <SecondaryButtonDefault className="px-16 font-medium">
+          <Button
+            variant="secondary"
+            size="small"
+            className="px-16 font-medium"
+          >
             Learn More
-          </SecondaryButtonDefault>
+          </Button>
         )}
       </Link>
     </div>

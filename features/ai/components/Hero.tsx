@@ -1,7 +1,12 @@
-import { PrimaryButtonDefault } from "@/shared/components/UI/button/PrimaryButton";
-import React from "react";
+'use client';
+import { Button } from "@/shared/components/UI/button/Button";
 
-const Hero = () => {
+interface Props {
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+}
+
+const Hero = ({activeTab, setActiveTab}: Props) => {
   return (
     <section className="flex w-full pt-25.25 bg-[linear-gradient(270deg,#356C85_0%,#61A5A2_83.65%,#66ACA5_100%)] font-plus-jakarta-sans text-white justify-center">
       <div className="flex justify-center items-center py-18">
@@ -20,12 +25,22 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex gap-5 justify-center">
-            <PrimaryButtonDefault className="bg-green-normal">
+            <Button
+              variant="primary"
+              size="default"
+              className="bg-green-normal"
+              onClick={() => setActiveTab('cv')}
+            >
               Analyze My CV
-            </PrimaryButtonDefault>
-            <PrimaryButtonDefault className="bg-blue-dark-hover">
+            </Button>
+            <Button
+              variant="primary"
+              size="default"
+              className="bg-blue-dark-hover"
+              onClick={() => setActiveTab('inteview')}
+            >
               Start Interview Simulation
-            </PrimaryButtonDefault>
+            </Button>
           </div>
           <div className="flex justify-center">
             <div className="pr-18">

@@ -1,4 +1,4 @@
-import { PrimaryButtonSmall } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import React from "react";
 
 const SessionSetup = () => {
@@ -41,9 +41,13 @@ const SessionSetup = () => {
             placeholder="-- Select --"
           />
         </div>
-        <PrimaryButtonSmall className="bg-green-normal mt-4 text-body">
+        <Button
+          variant="primary"
+          size="small"
+          className="bg-green-normal mt-4 text-body"
+        >
           Start Interview
-        </PrimaryButtonSmall>
+        </Button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { PrimaryButtonSmall } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 import { User, Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -66,13 +66,15 @@ const LoginForm = () => {
         <p className="text-red-500 text-sm pl-2">{errors.password.message}</p>
       )}
       <div className="flex justify-center">
-        <PrimaryButtonSmall
+        <Button
+          variant="primary"
+          size="small"
           type="submit"
           disabled={isPending}
           className="px-12 py-2.5 w-fit"
         >
           {isPending ? "Loading..." : "Sign In"}
-        </PrimaryButtonSmall>
+        </Button>
       </div>
       {isError && (
         <p className="text-red-500 text-center text-sm">

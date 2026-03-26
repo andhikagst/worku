@@ -1,6 +1,6 @@
 import Image from "next/image";
 import wanita_hero from "@/public/home/hero/wanita_hero.png";
-import { PrimaryButtonSmall } from "@/shared/components/UI/button/PrimaryButton";
+import { Button } from "@/shared/components/UI/button/Button";
 
 const Hero = () => {
   return (
@@ -21,7 +21,9 @@ const Hero = () => {
             bridge the gap between academic theory and industry requirements.
           </h2>
         </div>
-        <PrimaryButtonSmall>Get Started</PrimaryButtonSmall>
+        <Button variant="primary" size="small">
+          Get Started
+        </Button>
       </div>
       <div className="flex bg-blue-normal-active items-center gap-12 px-20 py-7">
         <div>
