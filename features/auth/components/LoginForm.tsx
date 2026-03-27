@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { LoginPayload, loginSchema } from "../schemas/auth.schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLogin } from "../hooks/useLogin";
+import { TextInput } from "@/shared/components/UI/input/TextInput";
+import Link from "next/link";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -19,7 +21,7 @@ const LoginForm = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const { mutate, isPending, isError, error } = useLogin();
+  const { mutate, isPending, isError, error, reset } = useLogin();
 
   const onSubmit = (data: LoginPayload) => {
     mutate(data, {
@@ -35,37 +37,42 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-6 font-plus-jakarta-sans"
+      onChange={() => {
+        if (isError) reset();
+      }}
+      className="space-y-2 font-plus-jakarta-sans px-32"
     >
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100">
-        <div className="p-5">
-          <User size={24} />
-        </div>
-        <input
+      <div className="space-y-0.5">
+        <TextInput
           type="text"
+          icon={User}
           placeholder="Username"
-          className=" w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("username")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-5 text-start">
+          {errors.username?.message}
+        </p>
       </div>
-      {errors.username && (
-        <p className="text-red-500 text-sm pl-2">{errors.username.message}</p>
-      )}
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100">
-        <div className="p-5">
-          <Lock size={24} />
-        </div>
-        <input
+      <div className="space-y-0.5">
+        <TextInput
           type="password"
+          icon={Lock}
           placeholder="Password"
-          className="w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("password")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-4 text-start">
+          {errors.password?.message}
+        </p>
       </div>
-      {errors.password && (
-        <p className="text-red-500 text-sm pl-2">{errors.password.message}</p>
-      )}
-      <div className="flex justify-center">
+      <p className="text-body text-gray-400">
+        Don&apos;t have an account?{" "}
+        <span className="font-bold text-gray-600">
+          <Link href="/">Sign Up</Link>
+        </span>
+      </p>
+      <div className="flex justify-center mt-4">
         <Button
           variant="primary"
           size="small"
@@ -76,11 +83,9 @@ const LoginForm = () => {
           {isPending ? "Loading..." : "Sign In"}
         </Button>
       </div>
-      {isError && (
-        <p className="text-red-500 text-center text-sm">
-          {(error as Error).message}
-        </p>
-      )}
+      <p className="text-red-500 text-center text-sm min-h-5">
+        {isError && (error as Error).message}
+      </p>
     </form>
   );
 };

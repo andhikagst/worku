@@ -1,24 +1,28 @@
+import { LucideIcon } from "lucide-react";
 import React, { forwardRef } from "react";
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
+  icon?: LucideIcon;
+  containerClassName?: string;
 }
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ label, className = "", ...props }, ref) => {
+  ({ label, icon: Icon, className = "", containerClassName="", ...props }, ref) => {
     return (
       <div className="space-y-1">
-        <label htmlFor="input1" className="block">
-          {label}
-        </label>
-        <input
-          ref={ref}
-          className={`w-full outline-none text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162] ${className}`}
-          {...props}
-        />
+        {label && <label className="block">{label}</label>}
+        <div className={`flex items-center text-black border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162] ${containerClassName}`}>
+          {Icon && (
+            <div className="mr-3">
+              <Icon size={24} className="text-[#616162]"/>
+            </div>
+          )}
+          <input ref={ref} className={`bg-transparent outline-none w-full h-full ${className}`} {...props} />
+        </div>
       </div>
     );
   },
 );
 
-TextInput.displayName = "TextInput"
+TextInput.displayName = "TextInput";

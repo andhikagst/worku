@@ -1,8 +1,13 @@
+"use client"
 import { filterList } from "../data/filterList";
 import { courseList } from "../data/courseList";
 import CourseCard from "@/features/home/course/components/CourseCard";
+// import { useCourse } from "../hooks/useCourse";
 
 const Courses = () => {
+
+  // const {data, isLoading, isError} = useCourse();
+
   return (
     <section className="py-37 font-plus-jakarta-sans">
       <div className="px-20 flex flex-col gap-11.5">
@@ -35,6 +40,15 @@ const Courses = () => {
               />
             );
           })}
+          {/* {data?.payload.map((data) => {
+            return (
+              <CourseCard
+                className="border-2 border-green-normal"
+                key={data.id}
+                data={data}
+              />
+            );
+          })} */}
         </div>
       </div>
     </section>

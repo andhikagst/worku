@@ -11,7 +11,7 @@ const RegisterPage = () => {
   return (
     <main className="flex h-screen w-full font-plus-jakarta-sans pt-24">
       <div
-        className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative"
+        className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative h-full"
         style={{ backgroundImage: `url(${bg_login.src})` }}
       >
         <div className="leading-none text-white drop-shadow-[rgba(0,0,0,0.50)] drop-shadow-md">
@@ -25,11 +25,11 @@ const RegisterPage = () => {
           alt="..."
         />
       </div>
-      <div className="flex flex-col flex-1 justify-center items-center gap-5">
+      <div className="flex flex-col flex-1 justify-center text-center gap-5">
         <h1 className="text-[2.75rem] text-blue-dark font-bold">
           Create account
         </h1>
-        <div className="flex gap-2.5">
+        <div className="flex gap-2.5 justify-center">
           <Image src={google} alt="..." />
           <Image src={facebook} alt="..." />
           <Image src={linkedin} alt="..." />
@@ -37,7 +37,9 @@ const RegisterPage = () => {
         <p className="text-[#797A7C] text-[1.125rem]">
           or use your email for registration
         </p>
-        <RegisterForm></RegisterForm>
+        <div className="px-32">
+          <RegisterForm />
+        </div>
       </div>
     </main>
   );

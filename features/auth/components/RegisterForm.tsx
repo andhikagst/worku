@@ -7,6 +7,8 @@ import { RegisterPayload, registerSchema } from "../schemas/auth.schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRegister } from "../hooks/useRegister";
 import { useRouter } from "next/navigation";
+import { TextInput } from "@/shared/components/UI/input/TextInput";
+import Link from "next/link";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -35,65 +37,63 @@ const RegisterForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-6 font-plus-jakarta-sans"
+      className="space-y-2 font-plus-jakarta-sans"
     >
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
-        <div className="p-5">
-          <Pen size={24} />
-        </div>
-        <input
+      <div className="space-y-1">
+        <TextInput
           type="text"
+          icon={Pen}
           placeholder="Name"
-          className=" w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("name")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-5 text-start">
+          {errors.name?.message}
+        </p>
       </div>
-      {errors.name && (
-        <p className="text-red-500 text-sm pl-2">{errors.name.message}</p>
-      )}
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
-        <div className="p-5">
-          <Mail size={24} />
-        </div>
-        <input
+      <div>
+        <TextInput
           type="email"
+          icon={Mail}
           placeholder="Email"
-          className="w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("email")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-5 text-start">
+          {errors.email?.message}
+        </p>
       </div>
-      {errors.email && (
-        <p className="text-red-500 text-sm pl-2">{errors.email.message}</p>
-      )}
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
-        <div className="p-5">
-          <User size={24} />
-        </div>
-        <input
+      <div>
+        <TextInput
           type="text"
+          icon={User}
           placeholder="Username"
-          className="w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("username")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-5 text-start">
+          {errors.username?.message}
+        </p>
       </div>
-      {errors.username && (
-        <p className="text-red-500 text-sm pl-2">{errors.username.message}</p>
-      )}
-      <div className="flex items-center bg-green-light-active border border-[#616162] text-[#616162] rounded-2xl max-w-100 min-w-100 pr-4">
-        <div className="p-5">
-          <Lock size={24} />
-        </div>
-        <input
+      <div>
+        <TextInput
           type="password"
+          icon={Lock}
           placeholder="Password"
-          className="w-full text-[1.125rem]"
+          containerClassName="border-[#616162]! rounded-2xl! text-body h-16"
           {...register("password")}
         />
+        <p className="text-red-500 text-sm pl-2 min-h-5 text-start">
+          {errors.password?.message}
+        </p>
       </div>
-      {errors.password && (
-        <p className="text-red-500 text-sm pl-2">{errors.password.message}</p>
-      )}
-      <div className="flex justify-center">
+       <p className="text-body text-gray-400">
+        Already have an account?{" "}
+        <span className="font-bold text-gray-600">
+          <Link href="/">Sign In</Link>
+        </span>
+      </p>
+      <div className="flex justify-center mt-4">
         <Button
           variant="primary"
           size="small"
@@ -104,11 +104,9 @@ const RegisterForm = () => {
           {isPending ? "Loading..." : "Sign Up"}
         </Button>
       </div>
-      {isError && (
-        <p className="text-red-500 text-center text-sm">
-          {(error as Error).message}
-        </p>
-      )}
+      <p className="text-red-500 text-center text-sm min-h-5">
+        {isError && (error as Error).message}
+      </p>
     </form>
   );
 };

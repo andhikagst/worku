@@ -10,7 +10,7 @@ import RatingContainer from "@/features/home/rating/container/container";
 
 const HomeContainer = () => {
   return (
-    <main>
+    <main className="w-full overflow-x-hidden">
       <HeroContainer />
       <PartnerContainer />
       <CourseContainer />

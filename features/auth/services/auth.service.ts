@@ -16,6 +16,7 @@ export const registerUser = async (payload: RegisterPayload) => {
     return response.data;
   } catch (error) {
     handleAxiosError(error, "Register failed");
+    throw error;
   }
 };
 
@@ -25,5 +26,6 @@ export const loginUser = async (payload: LoginPayload) => {
     return response.data;
   } catch (error) {
     handleAxiosError(error, "Login failed");
+    throw error;
   }
 };

@@ -6,22 +6,19 @@ import linkedin from "@/public/auth/linkedin.png";
 import bg_login from "@/public/auth/bg_login.png";
 import chat from "@/public/auth/chat.svg";
 
-import React from "react";
-import { Button } from "@/shared/components/UI/button/Button";
-
 const LoginPage = () => {
   return (
     <main className="flex h-screen w-full font-plus-jakarta-sans pt-24">
-      <div className="flex flex-col flex-1 justify-center items-center gap-5">
-        <h1 className="text-[2.75rem] text-blue-dark font-bold">
+      <div className="flex flex-col flex-1 justify-center gap-5 text-center">
+        <h1 className="text-[2.75rem] text-blue-dark font-bold ">
           Sign in to WorkU
         </h1>
-        <div className="flex gap-2.5">
+        <div className="flex gap-2.5 items-center justify-center">
           <Image src={google} alt="..." />
           <Image src={facebook} alt="..." />
           <Image src={linkedin} alt="..." />
         </div>
-        <p className="text-[#797A7C] text-[1.125rem]">
+        <p className="text-[#797A7C] text-[1.125rem] ">
           or use your email account
         </p>
         <LoginForm />
