@@ -8,7 +8,7 @@ import chat from "@/public/auth/chat.svg";
 
 const LoginPage = () => {
   return (
-    <main className="flex h-screen w-full font-plus-jakarta-sans pt-24">
+    <main className="flex h-screen w-full font-plus-jakarta-sans">
       <div className="flex flex-col flex-1 justify-center gap-5 text-center">
         <h1 className="text-[2.75rem] text-blue-dark font-bold ">
           Sign in to WorkU

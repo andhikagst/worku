@@ -9,7 +9,7 @@ import RegisterForm from "@/features/auth/components/RegisterForm";
 
 const RegisterPage = () => {
   return (
-    <main className="flex h-screen w-full font-plus-jakarta-sans pt-24">
+    <main className="flex h-screen w-full font-plus-jakarta-sans">
       <div
         className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative h-full"
         style={{ backgroundImage: `url(${bg_login.src})` }}

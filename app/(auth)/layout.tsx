@@ -4,7 +4,9 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <div className="pt-34.25">
+        {children}
+      </div>
     </>
   );
 };

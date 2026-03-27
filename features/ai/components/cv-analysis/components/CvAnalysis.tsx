@@ -56,7 +56,6 @@ const CvAnalysis = () => {
         className="flex flex-col gap-10 w-full"
       >
         <div className="flex gap-14 w-full justify-between">
-          {/* Upload CV */}
           <div className="flex flex-col gap-6.5 justify-center items-center text-center bg-blue-normal rounded-3xl px-28">
             <h1 className="text-h2 font-bold">Upload Your CV</h1>
             <p className="text-[#B3B3B3] leading-relaxed">

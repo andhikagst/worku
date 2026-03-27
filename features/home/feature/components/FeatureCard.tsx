@@ -17,7 +17,7 @@ const FeatureCard = ({ data }: { data: Feature }) => {
       <Image src={data.image} alt="..." />
       <h1 className="text-display-4 font-bold">{data.title}</h1>
       <p className="text-body-sm text-center">{data.desc}</p>
-      <Link href="">
+      <Link href={data.href}>
         {isHighlight ? (
           <Button
             variant="primary"

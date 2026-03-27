@@ -18,7 +18,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               <Icon size={24} className="text-[#616162]"/>
             </div>
           )}
-          <input ref={ref} className={`bg-transparent outline-none w-full h-full ${className}`} {...props} />
+          <input ref={ref} className={`bg-transparent text-body-sm outline-none w-full h-full ${className}`} {...props} />
         </div>
       </div>
     );

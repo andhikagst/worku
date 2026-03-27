@@ -1,10 +1,11 @@
 import React from "react";
-import { MapPin, Briefcase, CircleDollarSign } from "lucide-react";
+import { MapPin, Briefcase, CircleDollarSign, ArrowRight } from "lucide-react";
 import { Job } from "../data/jobList";
+import { Button } from "@/shared/components/UI/button/Button";
 
 const JobCard = ({ data }: { data: Job }) => {
   return (
-    <div className="bg-white rounded-[40px] w-fit h-fit aspect-3/2 font-plus-jakarta-sans py-6">
+    <div className="bg-white rounded-[40px] w-fit h-fit aspect-3/2 font-plus-jakarta-sans py-6 relative">
       <div className="flex flex-col gap-4 px-11">
         <div className="flex gap-5">
           <div className="bg-green-light-hover text-blue-normal p-9 rounded-[20px] font-bold">
@@ -51,6 +52,7 @@ const JobCard = ({ data }: { data: Job }) => {
           {data.distance}
         </div>
       </div>
+      <Button variant="secondary" size="small" className="absolute right-[5%] bottom-[5%]">See Details <ArrowRight className="inline"/></Button>
     </div>
   );
 };

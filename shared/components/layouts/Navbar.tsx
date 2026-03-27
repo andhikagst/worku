@@ -4,12 +4,12 @@ import Link from "next/link";
 import logo from "@/public/navbar/logo.svg";
 import { useEffect, useRef, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { Menu, X } from "lucide-react"; // 👈 Tambahan import icon hamburger
+import { Menu, Phone, X, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // 👈 State untuk menu HP
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -21,8 +21,7 @@ const Navbar = () => {
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 20) {
         setVisible(false);
-        // Otomatis tutup menu dropdown kalau lagi scroll ke bawah biar rapi
-        setDropdownOpen(false); 
+        setDropdownOpen(false);
         setIsMobileMenuOpen(false);
       } else {
         setVisible(true);
@@ -67,7 +66,7 @@ const Navbar = () => {
                 className="block px-4 py-2 hover:bg-gray-50"
                 onClick={() => {
                   setDropdownOpen(false);
-                  setIsMobileMenuOpen(false); // Tutup menu HP juga pas diklik
+                  setIsMobileMenuOpen(false);
                 }}
               >
                 Profile
@@ -83,11 +82,12 @@ const Navbar = () => {
         </div>
       );
     }
+
     return (
       <>
         <li>
           <Link
-            className="bg-white rounded-4xl text-blue-normal-hover text-body3 px-5.5 py-2.5 shadow-md"
+            className="bg-white rounded-4xl text-blue-normal-hover text-body3 px-5.5 py-2.5 shadow-md shadow-gray-400"
             href="/login"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -96,7 +96,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            className="bg-blue-darker rounded-4xl text-white text-body-sm px-5.5 py-2.5 shadow-md"
+            className="bg-blue-darker rounded-4xl text-white text-body-sm px-5.5 py-2.5 shadow-md shadow-gray-400"
             href="/register"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -109,65 +109,145 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav
-        className={`font-plus-jakarta-sans bg-blue-normal text-white fixed top-0 left-0 right-0 z-[99] transition-transform duration-300 ease-in-out
+      <div
+        className={`font-plus-jakarta-sans fixed top-0 left-0 right-0 z-99 transition-transform duration-300 ease-in-out
           ${visible ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/* === CONTAINER UTAMA (Selalu Kelihatan di Atas) === */}
-        <div className="flex justify-between items-center px-6 lg:px-11 py-2 w-full">
-          {/* LOGO */}
-          <ul className="flex items-center">
-            <li>
-              <Link href="/home">
-                <Image src={logo} alt="WorkU Logo" width={107} height={85} className="w-[80px] lg:w-[107px] h-auto" />
+        {/* Top Bar */}
+        <div className="bg-[#3d6e7e] text-white text-sm px-6 lg:px-11 py-2">
+          <div className="flex justify-between items-center w-full">
+            {/* Left: contact info */}
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Phone size={14} />
+                <span>(001) 88455438</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin size={14} />
+                <span>Jakarta, ID</span>
+              </div>
+            </div>
+
+            {/* Right: social media icons */}
+            <div className="flex items-center gap-4">
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Facebook size={16} />
               </Link>
-            </li>
-          </ul>
-
-          {/* TOMBOL HAMBURGER (Hanya muncul di HP) */}
-          <button
-            className="lg:hidden text-white focus:outline-none p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-
-          {/* MENU DESKTOP (Sembunyi di HP, Muncul di Laptop) */}
-          <ul className="hidden lg:flex gap-10 text-body-sm items-center">
-            <li><Link href="/home" className="hover:text-gray-200">Home</Link></li>
-            <li><Link href="/course" className="hover:text-gray-200">Course</Link></li>
-            <li><Link href="/features" className="hover:text-gray-200">Features</Link></li>
-            <li><Link href="/contact" className="hover:text-gray-200">Contact</Link></li>
-          </ul>
-
-          {/* AUTH DESKTOP (Sembunyi di HP) */}
-          <ul className="hidden lg:flex gap-3 text-body-sm items-center">
-            {renderAuthSection()}
-          </ul>
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Instagram size={16} />
+              </Link>
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Twitter size={16} />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        {/* === DROPDOWN MENU MOBILE === */}
-        <div
-          className={`lg:hidden flex flex-col overflow-hidden transition-all duration-300 ease-in-out bg-blue-normal
-            ${isMobileMenuOpen ? "max-h-[500px] opacity-100 py-6 border-t border-white/10" : "max-h-0 opacity-0 py-0"}
-          `}
-        >
-          <ul className="flex flex-col gap-6 text-center text-body-sm">
-            <li><Link href="/home" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-            <li><Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
-            <li><Link href="/course" onClick={() => setIsMobileMenuOpen(false)}>Course</Link></li>
-            <li><Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
-          </ul>
-          
-          {/* Garis Pembatas Auth di HP */}
-          <div className="mt-6 pt-6 border-t border-white/20 mx-8">
-            <ul className="flex justify-center gap-4 text-body-sm items-center">
+        {/* Main Navbar */}
+        <nav className="font-plus-jakarta-sans text-blue-normal bg-white">
+          <div className="flex justify-between items-center px-6 lg:px-11 py-2 w-full">
+            <ul className="flex items-center">
+              <li>
+                <Link href="/home">
+                  <Image
+                    src={logo}
+                    alt="WorkU Logo"
+                    width={107}
+                    height={85}
+                    className="w-20 lg:w-26.75 h-auto"
+                  />
+                </Link>
+              </li>
+            </ul>
+
+            {/* Hamburger for mobile */}
+            <button
+              className="lg:hidden text-blue-normal focus:outline-none p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+
+            {/* Desktop nav links */}
+            <ul className="hidden lg:flex gap-10 text-body-sm items-center">
+              <li>
+                <Link href="/home" className="hover:text-gray-400 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-gray-400 transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/course" className="font-bold hover:text-gray-400 transition-colors">
+                  Course
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-gray-400 transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+
+            {/* Desktop auth buttons */}
+            <ul className="hidden lg:flex gap-3 text-body-sm items-center">
               {renderAuthSection()}
             </ul>
           </div>
-        </div>
-      </nav>
+
+          {/* Mobile Menu */}
+          <div
+            className={`lg:hidden flex flex-col overflow-hidden transition-all duration-300 ease-in-out bg-blue-normal
+              ${isMobileMenuOpen ? "max-h-125 opacity-100 py-6 border-t border-white/10" : "max-h-0 opacity-0 py-0"}
+            `}
+          >
+            <ul className="flex flex-col gap-6 text-center text-body-sm text-white">
+              <li>
+                <Link href="/home" onClick={() => setIsMobileMenuOpen(false)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/course" onClick={() => setIsMobileMenuOpen(false)}>
+                  Course
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  Contact
+                </Link>
+              </li>
+            </ul>
+
+            <div className="mt-4 flex justify-center gap-5 text-white">
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Facebook size={18} />
+              </Link>
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Instagram size={18} />
+              </Link>
+              <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Twitter size={18} />
+              </Link>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-white/20 mx-8">
+              <ul className="flex justify-center gap-4 text-body-sm items-center">
+                {renderAuthSection()}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };

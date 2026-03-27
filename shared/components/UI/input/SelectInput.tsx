@@ -22,7 +22,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, SelectInputProps>(
         <div className="">
           <select
             ref={ref}
-              className={`w-full outline-none appearance-none text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162] ${className}`}
+              className={`w-full outline-none appearance-none text-black block border border-[#B3B3B3] rounded-xl bg-green-light-active px-4 py-1 placeholder:text-[#616162] text-sm ${className}`}
               defaultValue=""
             {...props}
           >
