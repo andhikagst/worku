@@ -8,7 +8,8 @@ import chat from "@/public/auth/chat.svg";
 
 const LoginPage = () => {
   return (
-    <main className="flex h-screen w-full font-plus-jakarta-sans">
+    <main className="relative flex h-screen w-full font-plus-jakarta-sans">
+      <div className="absolute bg-gradient-to-left h-full w-[50%] right-0 top-0"/>
       <div className="flex flex-col flex-1 justify-center gap-5 text-center">
         <h1 className="text-[2.75rem] text-blue-dark font-bold ">
           Sign in to WorkU
@@ -25,7 +26,6 @@ const LoginPage = () => {
       </div>
       <div
         className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative"
-        style={{ backgroundImage: `url(${bg_login.src})` }}
       >
         <div className="leading-none text-white drop-shadow-[rgba(0,0,0,0.50)] drop-shadow-md">
           <h1 className="text-[5rem] font-bold">Hey</h1>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Course } from "../data/courseList";
+import { Course } from "@/features/course/data/courseList";
 import { Users, FileText } from "lucide-react";
 
 interface CardProps {
@@ -11,7 +11,7 @@ interface CardProps {
 const CourseCard = ({ data, className }: CardProps) => {
   return (
     <div
-      className={`flex flex-col px-4 pt-4 pb-6 border rounded-2xl gap-4 ${className}`}
+      className={`flex flex-col px-4 pt-4 pb-6 border-2 rounded-3xl gap-4 border-green-normal shadow-gray-800 hover:shadow-xl hover:scale-101 transition-all cursor-pointer ${className}`}
     >
       <Image src={data.image} alt="..." />
       <div className="flex flex-col gap-2">

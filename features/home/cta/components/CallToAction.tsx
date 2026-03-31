@@ -3,6 +3,7 @@ import cta from "@/public/home/cta/cta.png";
 import React from "react";
 import { Button } from "@/shared/components/UI/button/Button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const CallToAction = () => {
   return (
@@ -20,13 +21,15 @@ const CallToAction = () => {
             <br />
             academic potential into professional success.
           </p>
-          <Button
-            variant="primary"
-            size="default"
-            className="flex items-center gap-2"
-          >
-            Get Started <ArrowRight />
-          </Button>
+          <Link href="/login">
+            <Button
+              variant="primary"
+              size="default"
+              className="flex items-center gap-2"
+            >
+              Get Started <ArrowRight />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

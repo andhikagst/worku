@@ -3,18 +3,31 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-};
+}
 
 @layer utilities {
-  .bg-hero-gradient {
-    background-image: linear-gradient(270deg, #356C85 0%, #61A5A2 83.65%, #66ACA5 100%);
+  .bg-gradient-to-left {
+    background-image: linear-gradient(
+      270deg,
+      #356c85 0%,
+      #61a5a2 83.65%,
+      #66aca5 100%
+    );
   }
-};
+  .bg-gradient-to-right {
+    background-image: linear-gradient(
+      90deg,
+      #356c85 0%,
+      #61a5a2 83.65%,
+      #66aca5 100%
+    );
+  }
+}
 
 @theme inline {
   --font-poppins: var(--font-poppins);
   --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
-  
+
   --color-blue-light: #ebf0f3;
   --color-blue-light-hover: #e1e9ed;
   --color-blue-light-active: #c0d1d9;
@@ -134,4 +147,8 @@ h1 {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

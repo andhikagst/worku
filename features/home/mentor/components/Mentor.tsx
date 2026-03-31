@@ -1,23 +1,58 @@
+"use client";
 import Image from "next/image";
-import mentor_1 from "@/public/home/mentors/mentor_1.png"
-import mentor_2 from "@/public/home/mentors/mentor_2.png"
-import mentor_3 from "@/public/home/mentors/mentor_3.png"
-import {ChevronLeft, ChevronRight} from 'lucide-react'
-import React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { mentorList } from "../data/mentorList";
 
 const Mentor = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  const handleScroll = () => {
+    if (!sliderRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+    setIsAtStart(scrollLeft <= 1);
+    setIsAtEnd(Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (sliderRef.current) {
+      const scrollAmount = 1000;
+      sliderRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="flex flex-col pl-20 overflow-hidden gap-10 font-plus-jakarta-sans">
-      <div className="flex gap-16 w-fit">
-        <div className="w-125  h-150 bg-green-normal rounded-4xl flex items-end justify-center">
-          <Image src={mentor_1} alt="..." />
-        </div>
-        <div className="w-125 h-150 bg-green-normal rounded-4xl flex items-end justify-center">
-          <Image src={mentor_2} alt="..." />
-        </div>
-        <div className="w-125 h-150 bg-green-normal rounded-4xl flex items-end justify-center">
-          <Image src={mentor_3} alt="..." />
-        </div>
+    <section className="flex flex-col px-16 gap-10 font-plus-jakarta-sans">
+      <div
+        className="flex gap-16 overflow-x-scroll hide-scrollbar scroll-smooth"
+        ref={sliderRef}
+        onScroll={handleScroll}
+      >
+        {mentorList.map((data) => {
+          return (
+            <div
+              key={data.id}
+              className=" relative group min-w-116 min-h-148.5 bg-green-normal rounded-4xl flex items-end justify-center overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-linear-to-t from-gray-600 to-green-normal translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <Image
+                src={data.image}
+                alt={data.alt}
+                className="relative z-10 group-hover:scale-110 transition-all duration-300 origin-top"
+              />
+            </div>
+          );
+        })}
       </div>
       <div className="flex pr-20 justify-between items-center">
         <div className="flex gap-35 items-center">
@@ -35,11 +70,29 @@ const Mentor = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <button>
-            <ChevronLeft strokeWidth={1} size={48} color="#285164"/>
+          <button
+            className={`rounded-full p-2 cursor-pointer transition-all duration-300 ${
+              !isAtStart ? "bg-blue-dark" : "bg-transparent hover:bg-gray-100"
+            }`}
+            onClick={() => scroll("left")}
+          >
+            <ChevronLeft
+              strokeWidth={1}
+              size={48}
+              color={!isAtStart ? "#ffffff" : "#285164"}
+            />
           </button>
-          <button className="bg-blue-dark rounded-full p-2">
-            <ChevronRight strokeWidth={1} size={48} color="#ffffff"/>
+          <button
+            className={`rounded-full p-2 cursor-pointer transition-all duration-300 ${
+              !isAtEnd ? "bg-blue-dark" : "bg-transparent hover:bg-gray-100"
+            }`}
+            onClick={() => scroll("right")}
+          >
+            <ChevronRight
+              strokeWidth={1}
+              size={48}
+              color={!isAtEnd ? "#ffffff" : "#285164"}
+            />
           </button>
         </div>
       </div>

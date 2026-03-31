@@ -16,7 +16,7 @@ export const useInterview = () => {
         setup: variables,
       });
     },
-  });
+  }); 
 
   const continueMutation = useMutation({
     mutationFn: (input: string) => {

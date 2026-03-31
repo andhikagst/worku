@@ -5,22 +5,22 @@ import { Button } from "@/shared/components/UI/button/Button";
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col relative z-0 font-plus-jakarta-sans text-white">
-      <div className="bg-linear-to-b flex-1 from-blue-normal pt-26 to-green-normal to-70% flex flex-col justify-center text-center sm:text-left lg:gap-5 sm:gap-3 gap-1.5 px-20">
+      <div className="bg-linear-to-b flex-1 from-blue-normal pt-34.25 to-green-normal to-70% flex flex-col justify-center text-center sm:text-left lg:gap-5 sm:gap-3 gap-1.5 px-20">
         <h2 className="lg:text-h3 sm:text-lg text-md ">Start your favorite course</h2>
 
-        <h1 className="font-semibold font-poppins lg:text-display-3 sm:text-4xl text-2xl  drop-shadow-md leading-none drop-shadow-[rgba(0,0,0,0.50)]">
+        <h1 className="font-semibold font-poppins lg:text-display-3 sm:text-4xl text-2xl  drop-shadow-md leading-tight drop-shadow-[rgba(0,0,0,0.50)]">
           ACCELERATE YOUR
           <br />
           CAREER WITH <span className="text-blue-dark-hover">WORKU</span>
         </h1>
 
-        <h2 className="lg:text-300 sm:text-sm text-xs sm:max-w-[55%]">
+        <h2 className="lg:text-300 sm:text-sm text-xs sm:max-w-[55%] leading-relaxed">
           WorkU is an AI-driven career acceleration ecosystem designed to
           <br />
           bridge the gap between academic theory and industry requirements.
         </h2>
         <div>
-          <Button variant="primary" size="small" className="md:scale-100 scale-75 ">
+          <Button variant="secondary" size="small" className="md:scale-100 scale-75 text-white ring-white ring! font-normal hover:ring-0! hover:bg-green-normal hover:shadow-md hover:shadow-gray-600 transition-all">
             Get Started
           </Button>
         </div>

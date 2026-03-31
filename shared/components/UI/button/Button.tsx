@@ -15,12 +15,12 @@ export const Button = ({
 }: ButtonProps) => {
 
   const baseClasses =
-    "transition-all cursor-pointer w-fit font-plus-jakarta-sans font-bold rounded-full shadow-[rgba(0,0,0,0.25)] disabled:opacity-50 disabled:cursor-not-allowed";
+    "cursor-pointer w-fit font-plus-jakarta-sans font-bold rounded-full shadow-[rgba(0,0,0,0.25)] disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variantClasses = {
     primary: "bg-blue-dark text-white hover:bg-blue-dark-hover",
     secondary:
-      "bg-white text-blue-dark border-3 border-blue-dark hover:bg-blue-dark-hover hover:text-white", 
+      "bg-transparent text-blue-dark ring-3 ring-blue-dark hover:bg-blue-dark-hover hover:text-white", 
   };
 
   const sizeClasses = {

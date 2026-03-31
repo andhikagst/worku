@@ -69,7 +69,7 @@ const LoginForm = () => {
       <p className="text-body text-gray-400">
         Don&apos;t have an account?{" "}
         <span className="font-bold text-gray-600">
-          <Link href="/">Sign Up</Link>
+          <Link href="/register">Sign Up</Link>
         </span>
       </p>
       <div className="flex justify-center mt-4">

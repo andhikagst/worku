@@ -37,7 +37,7 @@ const RegisterForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-2 font-plus-jakarta-sans"
+      className="space-y-1 font-plus-jakarta-sans"
     >
       <div className="space-y-1">
         <TextInput
@@ -90,7 +90,7 @@ const RegisterForm = () => {
        <p className="text-body text-gray-400">
         Already have an account?{" "}
         <span className="font-bold text-gray-600">
-          <Link href="/">Sign In</Link>
+          <Link href="/login">Sign In</Link>
         </span>
       </p>
       <div className="flex justify-center mt-4">

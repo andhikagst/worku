@@ -9,10 +9,10 @@ import RegisterForm from "@/features/auth/components/RegisterForm";
 
 const RegisterPage = () => {
   return (
-    <main className="flex h-screen w-full font-plus-jakarta-sans">
+    <main className="relative flex h-screen w-full font-plus-jakarta-sans">
+      <div className="absolute bg-gradient-to-right h-full w-[50%] left-0 top-0"/>
       <div
         className="flex flex-1 justify-center items-center bg-cover bg-center flex-col relative h-full"
-        style={{ backgroundImage: `url(${bg_login.src})` }}
       >
         <div className="leading-none text-white drop-shadow-[rgba(0,0,0,0.50)] drop-shadow-md">
           <h1 className="text-[5rem] font-bold">Let&apos;s Make it</h1>
@@ -25,7 +25,7 @@ const RegisterPage = () => {
           alt="..."
         />
       </div>
-      <div className="flex flex-col flex-1 justify-center text-center gap-5">
+      <div className="flex flex-col flex-1 justify-center text-center gap-5 scale-90">
         <h1 className="text-[2.75rem] text-blue-dark font-bold">
           Create account
         </h1>

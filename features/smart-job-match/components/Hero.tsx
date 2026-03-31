@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="bg-hero-gradient py-16 font-plus-jakarta-sans">
+    <section className="bg-gradient-to-left py-16 font-plus-jakarta-sans">
       <div className="flex flex-col gap-4 px-32 pb-25 pt-16 text-white">
         <h1 className="text-display-2 font-bold leading-20">
           Find Jobs That

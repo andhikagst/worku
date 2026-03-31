@@ -8,7 +8,6 @@ import web from "@/public/course/web.png";
 import dg from "@/public/course/dg.png";
 import ms from "@/public/course/micr.png";
 
-// 1. Definisikan Struktur Data (Interface)
 export interface Course {
   id: number;
   image: StaticImageData;
@@ -18,7 +17,6 @@ export interface Course {
   material: number; 
 }
 
-// 2. Data Dummy
 export const courseList: Course[] = [
   {
     id: 1,
