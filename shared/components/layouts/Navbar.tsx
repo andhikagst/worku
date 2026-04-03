@@ -4,7 +4,15 @@ import Link from "next/link";
 import logo from "@/public/navbar/logo.svg";
 import { useEffect, useRef, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { Menu, Phone, X, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import {
+  Menu,
+  Phone,
+  X,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -166,22 +174,34 @@ const Navbar = () => {
 
             <ul className="hidden lg:flex gap-10 text-body-sm items-center">
               <li>
-                <Link href="/home" className="hover:text-gray-400 transition-colors">
+                <Link
+                  href="/home"
+                  className="hover:text-gray-400 transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-gray-400 transition-colors">
+                <Link
+                  href="/about"
+                  className="hover:text-gray-400 transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/course" className="font-bold hover:text-gray-400 transition-colors">
+                <Link
+                  href="/course"
+                  className=" hover:text-gray-400 transition-colors"
+                >
                   Course
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-gray-400 transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-gray-400 transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -214,7 +234,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Contact
                 </Link>
               </li>

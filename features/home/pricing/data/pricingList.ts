@@ -12,7 +12,7 @@ export const pricingList: Pricing[] = [
     id: 1,
     month: 1,
     duration_days: 30,
-    price: 2.00,
+    price: 35,
     feature: ["Career Discovery", "Smart Roadmap", "WorkU AI", "Smart Job Match", "Video & Materials", "Course Tracker", "Validate Task", "Certifications"],
     variant: "default"
   },
@@ -20,7 +20,7 @@ export const pricingList: Pricing[] = [
     id: 2,
     month: 6,
     duration_days: 180,
-    price: 7.00,
+    price: 120,
     feature: ["Career Discovery", "Smart Roadmap", "WorkU AI", "Smart Job Match", "Video & Materials", "Course Tracker", "Validate Task", "Certifications"],
     variant: "popular"
   },
@@ -28,7 +28,7 @@ export const pricingList: Pricing[] = [
     id: 3,
     month: 12,
     duration_days: 365,
-    price: 12.00,
+    price: 200,
     feature: ["Career Discovery", "Smart Roadmap", "WorkU AI", "Smart Job Match", "Video & Materials", "Course Tracker", "Validate Task", "Certifications"],
     variant: "default"
   },

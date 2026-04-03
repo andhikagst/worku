@@ -17,7 +17,7 @@ const PopularPricingCard = ({ data }: { data: Pricing }) => {
         <div className="flex flex-col">
           <h2 className="text-display-4 font-bold">{data.month} Month Plan</h2>
           <p className="text-body">WorkU Package</p>
-          <h1 className="text-h1 font-bold">${data.price}.00</h1>
+          <h1 className="text-h1 font-bold">Rp.{data.price} rb</h1>
         </div>
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
