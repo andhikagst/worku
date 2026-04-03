@@ -21,7 +21,6 @@ const Partner = () => {
               <Image
                 src={item.image}
                 alt="..."
-                // Atur lebar gambar yang berbeda untuk layar kecil jika perlu
                 className="w-12 sm:w-16 md:w-24 hover:opacity-100 transition-opacity"
               />
             </div>

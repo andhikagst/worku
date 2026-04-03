@@ -1,6 +1,5 @@
 import React from "react";
 
-// 1. Extend bawaan HTML, lalu tambahkan props variant dan size
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
   size?: "large" | "default" | "small" | "smaller";

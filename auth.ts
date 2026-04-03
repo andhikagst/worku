@@ -11,22 +11,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log("parsing")
         const parsed = loginSchema.safeParse(credentials);
-      console.log(parsed)
         if (!parsed.success) {
           return null;
         }
         
         try {
-          console.log("trying fetch data")
           const data = await loginUser(parsed.data);
           if (!data) {
-            console.log(data)
             return null
           };
           
-          console.log("trying return")
           return {
             id: data.payload.id,
             name: data.payload.name,

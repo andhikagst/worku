@@ -114,10 +114,8 @@ const Navbar = () => {
           ${visible ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/* Top Bar */}
         <div className="bg-[#3d6e7e] text-white text-sm px-6 lg:px-11 py-2">
           <div className="flex justify-between items-center w-full">
-            {/* Left: contact info */}
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone size={14} />
@@ -129,7 +127,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Right: social media icons */}
             <div className="flex items-center gap-4">
               <Link href="#" className="hover:text-gray-300 transition-colors">
                 <Facebook size={16} />
@@ -144,7 +141,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Main Navbar */}
         <nav className="font-plus-jakarta-sans text-blue-normal bg-white">
           <div className="flex justify-between items-center px-6 lg:px-11 py-2 w-full">
             <ul className="flex items-center">
@@ -161,7 +157,6 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* Hamburger for mobile */}
             <button
               className="lg:hidden text-blue-normal focus:outline-none p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -169,7 +164,6 @@ const Navbar = () => {
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
 
-            {/* Desktop nav links */}
             <ul className="hidden lg:flex gap-10 text-body-sm items-center">
               <li>
                 <Link href="/home" className="hover:text-gray-400 transition-colors">
@@ -193,13 +187,11 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* Desktop auth buttons */}
             <ul className="hidden lg:flex gap-3 text-body-sm items-center">
               {renderAuthSection()}
             </ul>
           </div>
 
-          {/* Mobile Menu */}
           <div
             className={`lg:hidden flex flex-col overflow-hidden transition-all duration-300 ease-in-out bg-blue-normal
               ${isMobileMenuOpen ? "max-h-125 opacity-100 py-6 border-t border-white/10" : "max-h-0 opacity-0 py-0"}

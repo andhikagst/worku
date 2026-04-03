@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import { FC, SVGProps } from "react";
 import ai from "@/public/home/features/ai.svg"
 import career from "@/public/home/features/career.svg"
 import job from "@/public/home/features/job.svg"
@@ -35,5 +34,3 @@ export const featureList: Feature[] = [
     desc: "Connect your validated skills directly to industry opportunities through automated precision matching.",
   },
 ]
-
-
