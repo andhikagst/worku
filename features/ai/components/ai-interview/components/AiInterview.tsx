@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import SessionSetup from "./SessionSetup";
 import Image from "next/image";
 import ai from "@/public/home/features/ai.png";
-import { Megaphone, Clock, Settings, ChartColumnBig, Mic, SendHorizonal } from "lucide-react";
+import { MegaphoneIcon, ClockIcon, GearIcon, ChartBarIcon, MicrophoneIcon, PaperPlaneRightIcon } from "@phosphor-icons/react";
 import { TextInput } from "@/shared/components/UI/input/TextInput";
 import { Button } from "@/shared/components/UI/button/Button";
 import { useInterview } from "../hooks/useInterview";
@@ -53,7 +53,7 @@ const AiInterview = () => {
             <h1 className="text-h3 font-bold">Tips</h1>
             <ul className="mt-4 space-y-5 font-semibold">
               <li className="flex items-center gap-4">
-                <Megaphone size={24} className="stroke-green-normal" />
+                <MegaphoneIcon size={24} weight="fill" className="text-green-normal" />
                 <p>
                   Use the STAR method — Situation, Task,
                   <br />
@@ -61,19 +61,19 @@ const AiInterview = () => {
                 </p>
               </li>
               <li className="flex items-center gap-4">
-                <Clock size={24} className="stroke-green-normal" />
+                <ClockIcon size={24} weight="fill" className="text-green-normal" />
                 Aim for 60–120 second answers —
                 <br />
                 concise but complete. Avoid rambling.
               </li>
               <li className="flex items-center gap-4">
-                <Settings size={24} className="stroke-green-normal" />
-                Press the mic button to record your voice,
+                <GearIcon size={28} weight="fill" className="text-green-normal" />
+                Press the microphone button to record your voice,
                 <br />
                 or type your answer in the text box.
               </li>
               <li className="flex items-center gap-4">
-                <ChartColumnBig size={24} className="stroke-green-normal" />
+                <ChartBarIcon size={24} weight="fill" className="text-green-normal" />
                 After the session, you&apos;ll get a full feedback
                 <br />
                 report with scores for each answer.
@@ -133,7 +133,7 @@ const AiInterview = () => {
             <div className="flex w-full gap-2">
               <div className="flex-1">
                 <TextInput
-                  placeholder="Type your answer here, or use the mic to speak"
+                  placeholder="Type your answer here, or use the MicrophoneIcon to speak"
                   containerClassName="bg-blue-normal-hover! h-18"
                   className="placeholder:text-[#B3B3B3] text-white"
                   value={input}
@@ -143,7 +143,7 @@ const AiInterview = () => {
                 />
               </div>
               <Button className="bg-green-normal rounded-xl p-5!" size="small" disabled={!isSessionActive}>
-                <Mic size={32} className="stroke-white" />
+                <MicrophoneIcon weight="fill" size={32} className="text-white" />
               </Button>
               <Button
                 className="bg-blue-normal rounded-xl p-5! border border-[#b3b3b3]"
@@ -151,7 +151,7 @@ const AiInterview = () => {
                 onClick={handleSend}
                 disabled={!isSessionActive || isSending || !input.trim()}
               >
-                <SendHorizonal size={32} className="stroke-white" />
+                <PaperPlaneRightIcon size={32} className="stroke-white" />
               </Button>
             </div>
           </div>

@@ -29,7 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             accessToken: data.token,
           };
         } catch(error) {
-          console.log("error trying:", error)
+          console.error("error trying:", error)
           return null;
         }
       },

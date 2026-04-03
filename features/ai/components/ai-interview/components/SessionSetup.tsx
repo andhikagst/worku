@@ -1,6 +1,6 @@
 import { Button } from "@/shared/components/UI/button/Button";
 import { TextInput } from "@/shared/components/UI/input/TextInput";
-import { Mic } from "lucide-react";
+import { MicrophoneIcon } from "@phosphor-icons/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sessionSetupSchema, SessionSetupPayload } from "../schemas/ai-interview.schema";
@@ -63,7 +63,7 @@ const SessionSetup = ({ onStart, isLoading, isDisabled }: SessionSetupProps) => 
             type="submit"
             className="bg-green-normal w-full mt-4 text-body rounded-xl"
           >
-            <Mic className="inline mr-1" size={24} />
+            <MicrophoneIcon weight="fill" className="inline mr-1" size={24} />
             {isLoading ? "Starting..." : isDisabled ? "Session Active" : "Start Interview"}
           </Button>
         </div>

@@ -1,0 +1,63 @@
+"use client";
+import { use, useState } from "react";
+import { getCourseDetail } from "@/features/course/data/courseDetail";
+import VideoPlayer from "@/features/course/components/detail/VideoPlayer";
+import CourseTabs from "@/features/course/components/detail/CourseTabs";
+import LessonContent from "@/features/course/components/detail/LessonContent";
+import CourseSidebar from "@/features/course/components/detail/CourseSidebar";
+
+type Tab = "video" | "module" | "project";
+
+interface Props {
+  params: Promise<{ courseId: string }>;
+}
+
+export default function CourseDetailPage({ params }: Props) {
+  const { courseId } = use(params);
+  const data = getCourseDetail(courseId);
+
+  const [activeTab, setActiveTab] = useState<Tab>("video");
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
+
+  const handleToggleItem = (id: string) => {
+    setCompletedItems((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50 font-plus-jakarta-sans pt-34.25">
+      <div className="flex">
+        <div className="flex-2 flex flex-col">
+          <VideoPlayer youtubeUrl={data.youtubeUrl} />
+          <CourseTabs active={activeTab} onChange={setActiveTab} />
+
+          {activeTab === "video" && (
+            <LessonContent
+              data={data}
+              isCompleted={isCompleted}
+              onComplete={() => setIsCompleted(true)}
+            />
+          )}
+          {activeTab === "module" && (
+            <div className="p-8 text-gray-400 text-body">Module content coming soon.</div>
+          )}
+          {activeTab === "project" && (
+            <div className="p-8 text-gray-400 text-body">Verified Project coming soon.</div>
+          )}
+        </div>
+
+        <div className="flex-1 shrink-0 px-16 py-14 flex flex-col gap-4 border-l border-gray-100 bg-[#EBF0F3]">
+          <CourseSidebar
+            data={data}
+            completedItems={completedItems}
+            onToggleItem={handleToggleItem}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

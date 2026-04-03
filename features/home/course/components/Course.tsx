@@ -1,5 +1,5 @@
 import CourseCard from "./CourseCard";
-import { courseList } from "@/features/course/data/courseList";
+import { courseList } from "@/features/course/data/categoryList";
 import Link from "next/link";
 import { Button } from "@/shared/components/UI/button/Button";
 
@@ -15,7 +15,11 @@ const Course = () => {
         })}
       </div>
       <Link href="/course">
-        <Button variant="secondary" size="large" className="px-25 py-8 ring-1! font-normal drop-shadow-lg drop-shadow-gray-600 transition-all">
+        <Button
+          variant="secondary"
+          size="large"
+          className="px-25 py-8 ring-1! font-normal drop-shadow-lg drop-shadow-gray-600 transition-all"
+        >
           Explore All Course
         </Button>
       </Link>

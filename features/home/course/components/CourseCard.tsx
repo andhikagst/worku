@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Course } from "@/features/course/data/courseList";
+import { Course } from "@/features/course/data/categoryList";
 import { Users, FileText } from "lucide-react";
 
 interface CardProps {

@@ -1,4 +1,4 @@
-import CourseContainer from '@/features/course/container/container'
+import CourseContainer from '@/features/course/container/CategoryContainer'
 import React from 'react'
 
 const page = () => {
