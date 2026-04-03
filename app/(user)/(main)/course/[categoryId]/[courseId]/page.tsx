@@ -1,12 +1,13 @@
 "use client";
 import { use, useState } from "react";
-import { getCourseDetail, gojekProjectData, wireframingModuleData } from "@/features/course/data/courseDetail";
+import { getCourseDetail, gojekProjectData, gojekProjectResult, wireframingModuleData } from "@/features/course/data/courseDetail";
 import VideoPlayer from "@/features/course/components/detail/VideoPlayer";
 import CourseTabs from "@/features/course/components/detail/CourseTabs";
 import LessonContent from "@/features/course/components/detail/LessonContent";
 import CourseSidebar from "@/features/course/components/detail/CourseSidebar";
 import ModuleContent from "@/features/course/components/detail/ModuleContent";
 import VerifiedProjectContent from "@/features/course/components/detail/VerifiedProjectContent";
+import ProjectResultContent from "@/features/course/components/detail/ProjectResultContent";
 
 type Tab = "video" | "module" | "project";
 
@@ -22,6 +23,7 @@ export default function CourseDetailPage({ params }: Props) {
   const [isModuleCompleted, setIsModuleCompleted] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
+  const [projectSubmitted, setProjectSubmitted] = useState(false);
 
   const handleToggleItem = (id: string) => {
     setCompletedItems((prev) => {
@@ -29,6 +31,10 @@ export default function CourseDetailPage({ params }: Props) {
       next.has(id) ? next.delete(id) : next.add(id);
       return next;
     });
+  };
+
+  const handleProjectSubmit = () => {
+    setProjectSubmitted(true); 
   };
 
   return (
@@ -53,7 +59,14 @@ export default function CourseDetailPage({ params }: Props) {
             />
           )}
           {activeTab === "project" && (
-            <VerifiedProjectContent data={gojekProjectData} />
+            projectSubmitted ? (
+              <ProjectResultContent result={gojekProjectResult} />
+            ) : (
+              <VerifiedProjectContent
+                data={gojekProjectData}
+                onSubmit={handleProjectSubmit}
+              />
+            )
           )}
         </div>
 

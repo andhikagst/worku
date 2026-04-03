@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import { Pricing } from "../data/pricingList";
 import { Button } from "@/shared/components/UI/button/Button";
 import { CircleCheck } from "lucide-react";
+import { usePayment } from "../hooks/usePayment";
 
 const PricingCard = ({ data }: { data: Pricing }) => {
+  const { mutate: pay, isPending } = usePayment();
+
   return (
     <div className="flex flex-col shadow-md shadow-[rgba(0,0,0,0.25)] rounded-4xl font-plus-jakarta-sans w-85.75 h-auto">
       <div className="bg-linear-to-b from-blue-normal to-green-normal text-white py-9 px-13.5 rounded-t-4xl">
@@ -13,21 +17,21 @@ const PricingCard = ({ data }: { data: Pricing }) => {
       </div>
       <div className="py-9 px-13.5 flex flex-col gap-8">
         <div className="flex flex-col gap-1">
-          {data.feature.map((item, index) => {
-            return (
-              <div key={index} className="flex items-center gap-5">
-                <CircleCheck color="white" fill="#204150" />
-                <p className="text-body text-blue-dark-hover"> {item}</p>
-              </div>
-            );
-          })}
+          {data.feature.map((item, index) => (
+            <div key={index} className="flex items-center gap-5">
+              <CircleCheck color="white" fill="#204150" />
+              <p className="text-body text-blue-dark-hover">{item}</p>
+            </div>
+          ))}
         </div>
         <Button
           variant="primary"
           size="small"
-          className="self-center px-8 py-4 text-200"
+          disabled={isPending}
+          onClick={() => pay(data.duration_days)}
+          className="self-center px-8 py-4 text-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Get Started
+          {isPending ? "Processing..." : "Get Started"}
         </Button>
       </div>
     </div>

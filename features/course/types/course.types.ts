@@ -104,3 +104,35 @@ export interface VerifiedProjectData {
   rubricTotal: number;
   rubricPass: number;
 }
+
+export interface ScoreBreakdownItem {
+  icon: Icon;
+  label: string;
+  score: number;
+  color: string;
+}
+
+export interface FeedbackSection {
+  number: string;
+  title: string;
+  status: "passed" | "needs_work";
+  score: number;
+  description: string;
+}
+
+export interface ProjectResult {
+  totalScore: number;
+  xpEarned: number;
+  projectName: string;
+  reviewedBy: string;
+  reviewerTitle: string;
+  reviewerInitials: string;
+  reviewedDate: string;
+  expertFeedback: string;
+  scoreBreakdown: ScoreBreakdownItem[];
+  feedbackSections: FeedbackSection[];
+  improvement: {
+    title: string;
+    description: string;
+  };
+}

@@ -190,7 +190,7 @@ const RubricSection = ({
   </div>
 );
 
-const SubmitSection = () => {
+const SubmitSection = ({ onSubmit }: { onSubmit: () => void }) => {
   const [figmaLink, setFigmaLink] = useState("");
   const [dragging, setDragging] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
@@ -284,7 +284,8 @@ const SubmitSection = () => {
         )}
       </div>
 
-      <button className="w-full bg-green-normal hover:bg-green-600 text-white font-bold text-body py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+      <button className="w-full bg-green-normal hover:bg-green-600 text-white font-bold text-body py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+      onClick={onSubmit}>
         Submit for verification
         <ArrowRightIcon size={18} weight="bold" />
       </button>
@@ -295,9 +296,10 @@ const SubmitSection = () => {
 
 interface Props {
   data: VerifiedProjectData;
+  onSubmit: () => void; 
 }
 
-const VerifiedProjectContent = ({ data }: Props) => (
+const VerifiedProjectContent = ({ data, onSubmit }: Props) => (
   <div className="flex flex-col gap-8 p-8">
     <PartnerHeroBanner data={data} />
     <PartnershipCard data={data} />
@@ -308,7 +310,7 @@ const VerifiedProjectContent = ({ data }: Props) => (
       total={data.rubricTotal}
       pass={data.rubricPass}
     />
-    <SubmitSection />
+    <SubmitSection onSubmit={onSubmit} />
   </div>
 );
 

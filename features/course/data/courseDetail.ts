@@ -10,6 +10,7 @@ import {
 import {
   CourseDetailData,
   ModuleData,
+  ProjectResult,
   VerifiedProjectData,
 } from "../types/course.types";
 
@@ -280,4 +281,61 @@ export const gojekProjectData: VerifiedProjectData = {
   ],
   rubricTotal: 100,
   rubricPass: 70,
+};
+
+export const gojekProjectResult: ProjectResult = {
+  totalScore: 80,
+  xpEarned: 100,
+  projectName: "GoFood Reorder Flow - Approved",
+  reviewedBy: "Christina Indira",
+  reviewerTitle: "Senior UX Designer, WorkU Mentor",
+  reviewerInitials: "CI",
+  reviewedDate: "Reviewed Mar 31, 2026",
+  expertFeedback:
+    "Strong wireframe structure overall. The 8-point grid is applied consistently across all 4 screens and Auto Layout usage is solid — frames reflow correctly when content changes. Your Order History redesign directly addresses friction point #1. The Cart Review screen is the weakest: the sticky CTA solves the scroll problem, but item list density is too high for mobile viewport — consider a collapsed order summary instead of a full line item list.",
+  scoreBreakdown: [
+    { icon: RulerIcon, label: "8-Point Grid & Spacing Consistency", score: 90, color: "text-green-normal" },
+    { icon: WrenchIcon, label: "Friction Points Addressed", score: 80, color: "text-blue-normal" },
+    { icon: PuzzlePieceIcon, label: "Prototype Completeness & Tappability", score: 88, color: "text-blue-normal" },
+    { icon: LinkIcon, label: "Design Rationale Quality", score: 72, color: "text-yellow-500" },
+  ],
+  feedbackSections: [
+    {
+      number: "01",
+      title: "Wireframe Screens",
+      status: "passed",
+      score: 90,
+      description:
+        "Grid consistency is excellent across all 4 frames. Auto Layout applied correctly — every parent container reflows on resize. The Order History entry point redesign is the strongest screen.",
+    },
+    {
+      number: "02",
+      title: "Annotations",
+      status: "passed",
+      score: 88,
+      description:
+        "16 annotations is solid coverage. Every spacing value traces back to an 8pt multiple. Friction point callouts are clearly labeled — reviewers can map each one to the brief without guessing.",
+    },
+    {
+      number: "03",
+      title: "Prototype",
+      status: "passed",
+      score: 88,
+      description:
+        "Full flow tappable with no dead ends. Smart Animate transitions are appropriate for the context. History → Confirmation → Cart → Success all connected correctly.",
+    },
+    {
+      number: "04",
+      title: "Design Rationale",
+      status: "needs_work",
+      score: 72,
+      description:
+        "The \"what\" is well-documented but the \"why\" is thin for friction points #2 and #3. The rejected alternative for Cart Review is missing. For your next project, frame each decision as: \"We chose X over Y because [user evidence or constraint].\" That's the CPO-level framing the brief asks for.",
+    },
+  ],
+  improvement: {
+    title: "One thing to improve for your next project",
+    description:
+      "Cart Review item density — use a collapsed order summary (item count + total price) instead of a full line item list. The sticky CTA is the right call, but average mobile viewports still require 2–3 scrolls to reach it. Collapsing the list removes that friction entirely.",
+  },
 };
