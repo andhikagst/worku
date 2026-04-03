@@ -1,12 +1,15 @@
 import Image from "next/image";
 import wanita_hero from "@/public/home/hero/wanita_hero.png";
 import { Button } from "@/shared/components/UI/button/Button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col relative z-0 font-plus-jakarta-sans text-white">
       <div className="bg-linear-to-b flex-1 from-blue-normal pt-34.25 to-green-normal to-70% flex flex-col justify-center text-center sm:text-left lg:gap-5 sm:gap-3 gap-1.5 px-20">
-        <h2 className="lg:text-h3 sm:text-lg text-md ">Start your favorite course</h2>
+        <h2 className="lg:text-h3 sm:text-lg text-md ">
+          Start your favorite course
+        </h2>
 
         <h1 className="font-semibold font-poppins lg:text-display-3 sm:text-4xl text-2xl  drop-shadow-md leading-tight drop-shadow-[rgba(0,0,0,0.50)]">
           ACCELERATE YOUR
@@ -20,23 +23,35 @@ const Hero = () => {
           bridge the gap between academic theory and industry requirements.
         </h2>
         <div>
-          <Button variant="secondary" size="small" className="md:scale-100 scale-75 text-white ring-white ring! font-normal hover:ring-0! hover:bg-green-normal hover:shadow-md hover:shadow-gray-600 transition-all">
-            Get Started
-          </Button>
+          <Link href="/course">
+            <Button
+              variant="secondary"
+              size="small"
+              className="md:scale-100 scale-75 text-white ring-white ring! font-normal hover:ring-0! hover:bg-green-normal hover:shadow-md hover:shadow-gray-600 transition-all"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="flex bg-blue-normal-active items-center lg:gap-12 md:gap-8 gap-4 lg:px-20 md:px-16 px-12 py-7">
         <div>
           <h1 className="font-extrabold md:text-h2 text-2xl">24/7</h1>
-          <h2 className="font-medium md:text-body-sm text-xs">AI Career Support</h2>
+          <h2 className="font-medium md:text-body-sm text-xs">
+            AI Career Support
+          </h2>
         </div>
         <div>
           <h1 className="font-extrabold md:text-h2 text-2xl">80+</h1>
-          <h2 className="font-medium md:text-body-sm text-xs">Industry Courses</h2>
+          <h2 className="font-medium md:text-body-sm text-xs">
+            Industry Courses
+          </h2>
         </div>
         <div>
           <h1 className="font-extrabold md:text-h2 text-2xl">100 MIL+</h1>
-          <h2 className="font-medium md:text-body-sm text-xs">Task Scenarios Simulated</h2>
+          <h2 className="font-medium md:text-body-sm text-xs">
+            Task Scenarios Simulated
+          </h2>
         </div>
       </div>
       <div className="absolute lg:right-0 md:-right-15 sm:-right-25 md:-bottom-10 -bottom-40 w-[75%] h-[95%] origin-right sm:block hidden">

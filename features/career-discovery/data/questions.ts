@@ -375,7 +375,7 @@ export const questions: Question[] = [
   },
   {
     id: 13,
-    dimension: "Core Strengths",
+    dimension: "Ambition",
     question: "Where do you genuinely see yourself in 5 years?",
     options: [
       {
@@ -406,7 +406,7 @@ export const questions: Question[] = [
   },
   {
     id: 14,
-    dimension: "Core Strengths",
+    dimension: "Ambition",
     question: "Which company type appeals most to you right now?",
     options: [
       {
@@ -437,7 +437,7 @@ export const questions: Question[] = [
   },
   {
     id: 15,
-    dimension: "Core Strengths",
+    dimension: "Ambition",
     question: "If you could design your ideal Monday morning...",
     options: [
       {

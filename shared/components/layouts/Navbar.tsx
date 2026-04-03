@@ -13,6 +13,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import { useUserInfo } from "@/features/profile/hooks/useUserInfo";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -22,6 +23,7 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { data: session, status } = useSession();
+  const { data: user } = useUserInfo();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +45,7 @@ const Navbar = () => {
   }, []);
 
   const renderAuthSection = () => {
+    
     if (status === "loading") {
       return (
         <div className="w-9 h-9 rounded-full bg-blue-darker animate-pulse" />
@@ -56,13 +59,23 @@ const Navbar = () => {
             onClick={() => setDropdownOpen((prev) => !prev)}
             className="flex items-center gap-2 focus:outline-none"
           >
-            <div className="w-9 h-9 rounded-full bg-white text-blue-normal font-bold flex items-center justify-center text-sm">
-              {session.user?.name?.charAt(0).toUpperCase()}
+            <div className="w-14 h-14 rounded-full bg-white text-blue-normal border-grey-300 border font-bold flex items-center justify-center text-sm overflow-hidden shrink-0">
+              {user?.profile_picture ? (
+                <Image 
+                  src={user.profile_picture} 
+                  alt="Profile Picture" 
+                  width={36} 
+                  height={36} 
+                  className="object-cover w-full h-full" 
+                />
+              ) : (
+                session.user?.name?.charAt(0).toUpperCase()
+              )}
             </div>
           </button>
 
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-lg py-2 text-blue-normal text-body3 z-50">
+            <div className="absolute overflow-hidden right-0 mt-2 w-48 bg-white rounded-2xl border shadow-lg py-2 text-blue-normal text-body3 z-50">
               <div className="px-4 py-2 border-b border-gray-100">
                 <p className="font-semibold truncate">{session.user?.name}</p>
                 <p className="text-xs text-gray-400 truncate">
