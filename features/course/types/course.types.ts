@@ -42,3 +42,65 @@ export interface CourseDetailData {
   overallProgress: number;
   progressLabel: string;
 }
+
+export interface ModuleSection {
+  id: string;
+  badge: string;       
+  title: string;
+  content: string;
+  
+  comparisonTable?: {
+    allowedTitle: string;
+    notAllowedTitle: string;
+    allowed: string[];
+    notAllowed: string[];
+  };
+  
+  steps?: {
+    number: string;
+    title: string;
+    description: string;
+  }[];
+}
+ 
+export interface ModuleData {
+  courseTitle: string;
+  moduleTitle: string;
+  subtitle: string;
+  sections: ModuleSection[];
+}
+
+interface Deliverable {
+  number: string;
+  title: string;
+  description: string;
+}
+ 
+interface RubricItem {
+  icon: Icon;
+  label: string;
+  pts: number;
+  color: string;
+}
+ 
+export interface VerifiedProjectData {
+  partnerName: string;
+  partnerLogo: string;
+  partnerTagline: string;
+  partnerMeta: string;
+  partnerValuation: string;
+  projectTitle: string;
+  projectSubtitle: string;
+  badges: string[];
+  partnershipNote: string;
+  partnershipDetail: string;
+  partnershipBadges: string[];
+  briefTitle: string;
+  briefContext: string;
+  briefTask: string;
+  briefTable: { feature: string; platform: string; coreProblem: string };
+  deliverables: Deliverable[];
+  rubric: RubricItem[];
+  rubricTotal: number;
+  rubricPass: number;
+}

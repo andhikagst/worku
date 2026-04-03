@@ -1,10 +1,12 @@
 "use client";
 import { use, useState } from "react";
-import { getCourseDetail } from "@/features/course/data/courseDetail";
+import { getCourseDetail, gojekProjectData, wireframingModuleData } from "@/features/course/data/courseDetail";
 import VideoPlayer from "@/features/course/components/detail/VideoPlayer";
 import CourseTabs from "@/features/course/components/detail/CourseTabs";
 import LessonContent from "@/features/course/components/detail/LessonContent";
 import CourseSidebar from "@/features/course/components/detail/CourseSidebar";
+import ModuleContent from "@/features/course/components/detail/ModuleContent";
+import VerifiedProjectContent from "@/features/course/components/detail/VerifiedProjectContent";
 
 type Tab = "video" | "module" | "project";
 
@@ -17,6 +19,7 @@ export default function CourseDetailPage({ params }: Props) {
   const data = getCourseDetail(courseId);
 
   const [activeTab, setActiveTab] = useState<Tab>("video");
+  const [isModuleCompleted, setIsModuleCompleted] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
 
@@ -43,10 +46,14 @@ export default function CourseDetailPage({ params }: Props) {
             />
           )}
           {activeTab === "module" && (
-            <div className="p-8 text-gray-400 text-body">Module content coming soon.</div>
+            <ModuleContent
+              data={wireframingModuleData}
+              isCompleted={isModuleCompleted}
+              onComplete={() => setIsModuleCompleted(true)}
+            />
           )}
           {activeTab === "project" && (
-            <div className="p-8 text-gray-400 text-body">Verified Project coming soon.</div>
+            <VerifiedProjectContent data={gojekProjectData} />
           )}
         </div>
 
